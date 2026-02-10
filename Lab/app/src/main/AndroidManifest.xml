@@ -23,8 +23,7 @@
             android:name=".MainActivity2"
             android:exported="true"
             android:label="@string/title_activity_main2"
-            android:theme="@style/Theme.LabLearnAndroid">
-        </activity>
+            android:theme="@style/Theme.LabLearnAndroid"></activity>
         <activity
             android:name=".MainActivity"
             android:exported="true"

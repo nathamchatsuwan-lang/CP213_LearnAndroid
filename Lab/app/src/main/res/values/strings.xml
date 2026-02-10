@@ -2,4 +2,6 @@
     <string name="app_name">LabLearnAndroid</string>
     <string name="title_activity_main2">MainActivity2</string>
     <string name="title_activity_lits_main_activity.kt">LitsMainActivity.kt</string>
+    <string name="title_activity_life_cycle_compose_activity.kt">LifeCycleComposeActivity.kt
+    </string>
 </resources>
