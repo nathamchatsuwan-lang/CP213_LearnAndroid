@@ -89,7 +89,7 @@ class RPGCardActivity : ComponentActivity() {
                     text = "hp",
                     modifier = Modifier
                         .align(alignment = Alignment.CenterStart)
-                        .fillMaxWidth(fraction = 0.55f)
+                        .fillMaxWidth(fraction = 0.11f)
                         .background(color = Color.Red)
                         .padding(8.dp)
                 )
