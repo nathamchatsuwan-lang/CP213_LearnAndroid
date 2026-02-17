@@ -30,12 +30,46 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 
-class MainActivity : ComponentActivity() {
+import android.util.Log
+
+class RPGCardActivity : ComponentActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Log.i("Lifecycle", "MainActivity : onCreate")
         setContent {
             RPGCardView()
         }
+    }
+
+    override fun onStart() {
+        super.onStart()
+        Log.i("Lifecycle", "MainActivity : onStart")
+    }
+
+    override fun onResume() {
+        super.onResume()
+        Log.i("Lifecycle", "MainActivity : onResume")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        Log.i("Lifecycle", "MainActivity : onPause")
+    }
+
+    override fun onStop() {
+        super.onStop()
+        Log.i("Lifecycle", "MainActivity : onStop")
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        Log.i("Lifecycle", "MainActivity : onDestroy")
+    }
+
+    override fun onRestart() {
+        super.onRestart()
+        Log.i("Lifecycle", "MainActivity : onRestart")
     }
 
     @Composable
@@ -68,7 +102,7 @@ class MainActivity : ComponentActivity() {
                     .align(Alignment.CenterHorizontally)
                     .padding(top = 16.dp, bottom = 32.dp)
                     .clickable {
-                        startActivity(Intent(this@MainActivity, PokedexActivity::class.java))
+                        startActivity(Intent(this@RPGCardActivity, LifeCycleComposeActivity::class.java))
                     }
             )
 
@@ -110,3 +144,4 @@ class MainActivity : ComponentActivity() {
         RPGCardView()
     }
 }
+
