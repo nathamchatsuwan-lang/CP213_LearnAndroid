@@ -15,11 +15,6 @@
         android:theme="@style/Theme.LabLearnAndroid"
         tools:targetApi="31">
         <activity
-            android:name=".ui.utils.PokemonApi"
-            android:exported="false"
-            android:label="@string/title_activity_pokemon_api"
-            android:theme="@style/Theme.LabLearnAndroid" />
-        <activity
             android:name=".SharedPreferencesActivity"
             android:exported="false"
             android:label="@string/title_activity_shared_preferences_activity.kt"
