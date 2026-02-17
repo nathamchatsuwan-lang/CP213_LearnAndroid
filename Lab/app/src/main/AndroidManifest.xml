@@ -15,17 +15,25 @@
         android:theme="@style/Theme.LabLearnAndroid"
         tools:targetApi="31">
         <activity
+            android:name=".ui.utils.PokemonApi"
+            android:exported="false"
+            android:label="@string/title_activity_pokemon_api"
+            android:theme="@style/Theme.LabLearnAndroid" />
+        <activity
+            android:name=".SharedPreferencesActivity"
+            android:exported="false"
+            android:label="@string/title_activity_shared_preferences_activity.kt"
+            android:theme="@style/Theme.LabLearnAndroid" />
+        <activity
             android:name=".MenuActivity"
             android:exported="true"
             android:label="@string/title_activity_menu"
-            android:theme="@style/Theme.LabLearnAndroid" >
-
+            android:theme="@style/Theme.LabLearnAndroid">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
-
         </activity>
         <activity
             android:name=".PokedexActivity"
@@ -36,7 +44,7 @@
             android:name=".LifeCycleComposeActivity"
             android:exported="true"
             android:label="@string/title_activity_main2"
-            android:theme="@style/Theme.LabLearnAndroid"></activity>
+            android:theme="@style/Theme.LabLearnAndroid" />
         <activity
             android:name=".ui.architecture.mvc.MvcCounterActivity"
             android:exported="true"
@@ -61,8 +69,7 @@
             android:name=".RPGCardActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.LabLearnAndroid">
-        </activity>
+            android:theme="@style/Theme.LabLearnAndroid"></activity>
     </application>
 
 </manifest>
