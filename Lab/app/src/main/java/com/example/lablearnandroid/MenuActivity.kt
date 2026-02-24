@@ -37,7 +37,12 @@ class MenuActivity : ComponentActivity() {
                 Button(onClick = {
                     startActivity(Intent(this@MenuActivity, SharedPreferencesActivity::class.java))
                 }) {
-                    Text("LifeCycleComposeActivity")
+                    Text("SharedPreferencesActivity")
+                }
+                Button(onClick = {
+                    startActivity(Intent(this@MenuActivity, PokemonViewModel::class.java))
+                }) {
+                    Text("PokemonViewModel")
                 }
             }
         }
