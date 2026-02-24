@@ -43,3 +43,5 @@ class MenuActivity : ComponentActivity() {
         }
     }
 }
+
+// check in 24 feb
