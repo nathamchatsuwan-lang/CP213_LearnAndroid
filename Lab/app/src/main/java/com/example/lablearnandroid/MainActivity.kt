@@ -197,5 +197,3 @@ fun GreetingPreview() {
         MainGameScreen()
     }
 }
-
-// Natham Chatsuwan 67102010511 check in 10/03/2569
