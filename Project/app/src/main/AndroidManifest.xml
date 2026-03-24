@@ -22,6 +22,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MenuActivity" android:theme="@style/Theme.CheckBill" />
+        <activity android:name=".SplitActivity" android:theme="@style/Theme.CheckBill" />
+        <activity android:name=".SummaryActivity" android:theme="@style/Theme.CheckBill" />
     </application>
 
 </manifest>
