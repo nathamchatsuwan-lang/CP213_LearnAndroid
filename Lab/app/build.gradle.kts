@@ -63,4 +63,6 @@ dependencies {
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
     // Lifecycle & ViewModel สำหรับ Compose
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.0")
+    // Location Services
+    implementation("com.google.android.gms:play-services-location:21.2.0")
 }
