@@ -86,7 +86,7 @@ fun MainGameScreen() {
                 .padding(top = 16.dp)
                 .clickable {
                     // ตรวจสอบว่ามี Class นี้อยู่จริงไหม
-                    context.startActivity(Intent(context, LitsMainActivity::class.java))
+                    context.startActivity(Intent(context, MainActivity::class.java))
                 }
         )
 
