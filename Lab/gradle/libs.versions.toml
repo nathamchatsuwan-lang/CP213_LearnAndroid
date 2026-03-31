@@ -9,6 +9,11 @@ lifecycleRuntimeKtx = "2.6.1"
 activityCompose = "1.8.0"
 composeBom = "2024.09.00"
 appcompat = "1.7.1"
+mockk = "1.13.12"
+coroutinesTest = "1.8.1"
+turbine = "1.1.0"
+archCore = "2.2.0"
+
 
 [libraries]
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
@@ -26,6 +31,11 @@ androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-man
 androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
 androidx-material3 = { group = "androidx.compose.material3", name = "material3" }
 androidx-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+io-mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
+kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutinesTest" }
+app-turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
+androidx-arch-core-test = { group = "androidx.arch.core", name = "core-testing", version.ref = "archCore" }
+
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
