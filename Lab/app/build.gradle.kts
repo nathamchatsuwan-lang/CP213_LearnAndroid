@@ -69,4 +69,9 @@ dependencies {
     implementation("androidx.lifecycle:lifecycle-viewmodel-compose:2.8.0")
     // Location Services
     implementation("com.google.android.gms:play-services-location:21.2.0")
-}
+
+    // Jetpack Glance (App Widgets)
+    implementation("androidx.glance:glance:1.1.1")
+    implementation("androidx.glance:glance-appwidget:1.1.1")
+    implementation("androidx.glance:glance-material3:1.1.1")
+}

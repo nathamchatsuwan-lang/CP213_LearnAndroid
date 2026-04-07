@@ -19,6 +19,26 @@
         android:theme="@style/Theme.LabLearnAndroid"
         tools:targetApi="31">
         <activity
+            android:name=".Part12Activity"
+            android:exported="false"
+            android:label="@string/title_activity_part12"
+            android:theme="@style/Theme.LabLearnAndroid" />
+        <activity
+            android:name=".Par11Activity"
+            android:exported="false"
+            android:label="@string/title_activity_par11"
+            android:theme="@style/Theme.LabLearnAndroid" />
+        <activity
+            android:name=".Part10Activity"
+            android:exported="false"
+            android:label="@string/title_activity_part10"
+            android:theme="@style/Theme.LabLearnAndroid" />
+        <activity
+            android:name=".Part9Activity"
+            android:exported="false"
+            android:label="@string/title_activity_part9"
+            android:theme="@style/Theme.LabLearnAndroid" />
+        <activity
             android:name=".Part8Activity"
             android:exported="false"
             android:label="@string/title_activity_part8"
@@ -121,6 +141,19 @@
             android:name=".DetailActivity"
             android:exported="false"
             android:theme="@style/Theme.LabLearnAndroid" />
+
+        <receiver
+            android:name=".SimpleWidgetReceiver"
+            android:exported="true"
+            android:label="Glance Widget">
+            <intent-filter>
+                <action android:name="android.appwidget.action.APPWIDGET_UPDATE" />
+            </intent-filter>
+            <meta-data
+                android:name="android.appwidget.provider"
+                android:resource="@xml/simple_widget_info" />
+        </receiver>
+
     </application>
 
 </manifest>

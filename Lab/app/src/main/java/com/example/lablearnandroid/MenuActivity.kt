@@ -13,6 +13,7 @@ import androidx.compose.material3.Text
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import android.util.Log
+import kotlin.jvm.java
 
 class MenuActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -107,6 +108,26 @@ class MenuActivity : ComponentActivity() {
                     startActivity(Intent(this@MenuActivity, DetailActivity::class.java))
                 }) {
                     Text("DetailActivity")
+                }
+                Button(onClick = {
+                    startActivity(Intent(this@MenuActivity, Part9Activity::class.java))
+                }) {
+                    Text("Part9Activity")
+                }
+                Button(onClick = {
+                    startActivity(Intent(this@MenuActivity, Part10Activity::class.java))
+                }) {
+                    Text("Part10Activity")
+                }
+                Button(onClick = {
+                    startActivity(Intent(this@MenuActivity, Part11Activity::class.java))
+                }) {
+                    Text("Part11Activity")
+                }
+                Button(onClick = {
+                    startActivity(Intent(this@MenuActivity, Part12Activity::class.java))
+                }) {
+                    Text("Part12Activity")
                 }
             }
         }

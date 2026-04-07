@@ -13,6 +13,7 @@ mockk = "1.13.12"
 coroutinesTest = "1.8.1"
 turbine = "1.1.0"
 archCore = "2.2.0"
+glance = "1.1.1"
 
 
 [libraries]
@@ -35,6 +36,8 @@ io-mockk = { group = "io.mockk", name = "mockk", version.ref = "mockk" }
 kotlinx-coroutines-test = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-test", version.ref = "coroutinesTest" }
 app-turbine = { group = "app.cash.turbine", name = "turbine", version.ref = "turbine" }
 androidx-arch-core-test = { group = "androidx.arch.core", name = "core-testing", version.ref = "archCore" }
+androidx-glance-appwidget = { group = "androidx.glance", name = "glance-appwidget", version.ref = "glance" }
+androidx-glance-material3 = { group = "androidx.glance", name = "glance-material3", version.ref = "glance" }
 
 
 [plugins]
