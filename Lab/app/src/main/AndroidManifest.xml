@@ -19,6 +19,46 @@
         android:theme="@style/Theme.LabLearnAndroid"
         tools:targetApi="31">
         <activity
+            android:name=".Part8Activity"
+            android:exported="false"
+            android:label="@string/title_activity_part8"
+            android:theme="@style/Theme.LabLearnAndroid" />
+        <activity
+            android:name=".Part7Activity"
+            android:exported="false"
+            android:label="@string/title_activity_part7"
+            android:theme="@style/Theme.LabLearnAndroid" />
+        <activity
+            android:name=".Part6Activity"
+            android:exported="false"
+            android:label="@string/title_activity_part6"
+            android:theme="@style/Theme.LabLearnAndroid" />
+        <activity
+            android:name=".Part5Activity"
+            android:exported="false"
+            android:label="@string/title_activity_part5"
+            android:theme="@style/Theme.LabLearnAndroid" />
+        <activity
+            android:name=".Part4Activity"
+            android:exported="false"
+            android:label="@string/title_activity_part4"
+            android:theme="@style/Theme.LabLearnAndroid" />
+        <activity
+            android:name=".Part3Activity"
+            android:exported="false"
+            android:label="@string/title_activity_part3"
+            android:theme="@style/Theme.LabLearnAndroid" />
+        <activity
+            android:name=".Part2Activity"
+            android:exported="false"
+            android:label="@string/title_activity_part2"
+            android:theme="@style/Theme.LabLearnAndroid" />
+        <activity
+            android:name=".Part1AnimationActivity"
+            android:exported="false"
+            android:label="@string/title_activity_part1_animation"
+            android:theme="@style/Theme.LabLearnAndroid" />
+        <activity
             android:name=".SharedPreferencesActivity"
             android:exported="false"
             android:label="@string/title_activity_shared_preferences_activity.kt"
@@ -68,13 +108,17 @@
             android:name=".RPGCardActivity"
             android:exported="true"
             android:label="@string/app_name"
-            android:theme="@style/Theme.LabLearnAndroid"></activity>
+            android:theme="@style/Theme.LabLearnAndroid" />
         <activity
             android:name=".GalleryActivity"
             android:exported="false"
             android:theme="@style/Theme.LabLearnAndroid" />
         <activity
             android:name=".SensorActivity"
+            android:exported="false"
+            android:theme="@style/Theme.LabLearnAndroid" />
+        <activity
+            android:name=".DetailActivity"
             android:exported="false"
             android:theme="@style/Theme.LabLearnAndroid" />
     </application>

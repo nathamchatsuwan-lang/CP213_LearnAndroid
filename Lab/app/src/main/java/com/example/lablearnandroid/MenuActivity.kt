@@ -63,6 +63,51 @@ class MenuActivity : ComponentActivity() {
                 }) {
                     Text("SensorActivity")
                 }
+                Button(onClick = {
+                    startActivity(Intent(this@MenuActivity, Part1AnimationActivity::class.java))
+                }) {
+                    Text("AnimationActivity")
+                }
+                Button(onClick = {
+                    startActivity(Intent(this@MenuActivity, Part2Activity::class.java))
+                }) {
+                    Text("Part2Activity")
+                }
+                Button(onClick = {
+                    startActivity(Intent(this@MenuActivity, Part3Activity::class.java))
+                }) {
+                    Text("Part3Activity")
+                }
+                Button(onClick = {
+                    startActivity(Intent(this@MenuActivity, Part4Activity::class.java))
+                }) {
+                    Text("Part4Activity")
+                }
+                Button(onClick = {
+                    startActivity(Intent(this@MenuActivity, Part5Activity::class.java))
+                }) {
+                    Text("Part5Activity")
+                }
+                Button(onClick = {
+                    startActivity(Intent(this@MenuActivity, Part6Activity::class.java))
+                }) {
+                    Text("Part6Activity")
+                }
+                Button(onClick = {
+                    startActivity(Intent(this@MenuActivity, Part7Activity::class.java))
+                }) {
+                    Text("Part7Activity")
+                }
+                Button(onClick = {
+                    startActivity(Intent(this@MenuActivity, Part8Activity::class.java))
+                }) {
+                    Text("Part8Activity")
+                }
+                Button(onClick = {
+                    startActivity(Intent(this@MenuActivity, DetailActivity::class.java))
+                }) {
+                    Text("DetailActivity")
+                }
             }
         }
     }
