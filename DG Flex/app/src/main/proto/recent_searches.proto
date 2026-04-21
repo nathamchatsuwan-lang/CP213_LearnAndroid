@@ -1,0 +1,8 @@
+syntax = "proto3";
+
+option java_package = "com.dg.flex.data";
+option java_multiple_files = true;
+
+message RecentSearches {
+    repeated string queries = 1;
+}

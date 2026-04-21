@@ -1,0 +1,64 @@
+package com.dg.flex.data.db.dao
+
+import com.dg.flex.data.db.entity.ProgramExercise
+import com.dg.flex.data.db.entity.ProgramExerciseAndInfo
+import com.dg.flex.data.db.entity.ProgramExerciseReorder
+import com.dg.flex.data.db.entity.ProgramExerciseWithExercise
+import com.dg.flex.data.db.entity.UpdateExerciseSuperset
+import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
+import androidx.room.Query
+import androidx.room.Update
+import kotlinx.coroutines.flow.Flow
+
+@Dao
+interface ProgramExerciseDao {
+
+    // get all exercises
+    @Query("SELECT * FROM programexercise")
+    fun getAll(): List<ProgramExercise>
+
+    @Update
+    suspend fun update(programExercise: ProgramExercise)
+
+    @Query(
+        "SELECT * FROM programexercise " +
+                "WHERE extProgramId LIKE :programId")
+    fun getExercises(programId: Long): Flow<List<ProgramExercise>>
+
+    @Query("SELECT * FROM programexercise WHERE programExerciseId LIKE :programExerciseId")
+    fun getProgramExercise(programExerciseId: Long): Flow<ProgramExercise>
+
+    @Query("SELECT programexercise.*, exercise.image, exercise.imageResKey, exercise.equipment, exercise.name, exercise.nameResKey, exercise.description, exercise.descriptionResKey, exercise.userDefined " +
+            "FROM programexercise " +
+            "LEFT JOIN exercise ON programexercise.extExerciseId = exercise.exerciseId " +
+            "WHERE programexercise.extProgramId = :programId")
+    fun getExercisesAndInfo(programId: Long): Flow<List<ProgramExerciseAndInfo>>
+
+    @Query("SELECT programexercise.*, exercise.* " +
+            "FROM programexercise " +
+            "LEFT JOIN exercise ON programexercise.extExerciseId = exercise.exerciseId " +
+            "WHERE programexercise.extProgramId = :programId")
+    fun getProgramExercisesWithExercise(programId: Long): Flow<List<ProgramExerciseWithExercise>>
+
+    @Query("SELECT programexercise.*, exercise.image, exercise.imageResKey, exercise.equipment, exercise.name, exercise.nameResKey, exercise.description, exercise.descriptionResKey, exercise.userDefined " +
+            "FROM programexercise " +
+            "LEFT JOIN exercise ON programexercise.extExerciseId = exercise.exerciseId " +
+            "WHERE programexercise.extProgramId IN (:programIds) "
+    )
+    fun getExercisesAndInfo(programIds: List<Long>): Flow<List<ProgramExerciseAndInfo>>
+
+    @Update(entity = ProgramExercise::class)
+    suspend fun updateOrder(programExerciseReorders: List<ProgramExerciseReorder>)
+
+    @Update(entity = ProgramExercise::class)
+    suspend fun updateSuperset(updateExerciseSupersets: List<UpdateExerciseSuperset>)
+
+    @Insert(onConflict = OnConflictStrategy.Companion.REPLACE)
+    suspend fun insert(plan: ProgramExercise): Long
+
+    @Query("DELETE FROM programexercise WHERE programExerciseId = :programExerciseId")
+    suspend fun delete(programExerciseId: Long)
+
+}
