@@ -138,6 +138,7 @@ dependencies {
     implementation(libs.hilt.navigation.compose)
 
     implementation(libs.core.ktx)
+    implementation(libs.google.material)
     implementation(libs.compose.icons)
     implementation(libs.compose.ui)
     implementation(libs.compose.material3)
