@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c5c287a9-acb3-4b77-bf41-57f1bdf695c5" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/CP213_LearnAndroid.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/caches/deviceStreaming.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/README.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/composeApp/build.gradle.kts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/composeApp/src/androidMain/AndroidManifest.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/composeApp/src/androidMain/kotlin/org/dgflex/project/MainActivity.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/composeApp/src/androidMain/kotlin/org/dgflex/project/Platform.android.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/composeApp/src/androidMain/res/drawable-v24/ic_launcher_foreground.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/composeApp/src/androidMain/res/drawable/ic_launcher_background.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/composeApp/src/androidMain/res/mipmap-anydpi-v26/ic_launcher.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/composeApp/src/androidMain/res/mipmap-anydpi-v26/ic_launcher_round.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/composeApp/src/androidMain/res/mipmap-hdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/composeApp/src/androidMain/res/mipmap-hdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/composeApp/src/androidMain/res/mipmap-mdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/composeApp/src/androidMain/res/mipmap-mdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/composeApp/src/androidMain/res/mipmap-xhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/composeApp/src/androidMain/res/mipmap-xhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/composeApp/src/androidMain/res/mipmap-xxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/composeApp/src/androidMain/res/mipmap-xxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/composeApp/src/androidMain/res/mipmap-xxxhdpi/ic_launcher.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/composeApp/src/androidMain/res/mipmap-xxxhdpi/ic_launcher_round.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/composeApp/src/androidMain/res/values/strings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/composeApp/src/commonMain/composeResources/drawable/compose-multiplatform.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/composeApp/src/commonMain/kotlin/org/dgflex/project/App.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/composeApp/src/commonMain/kotlin/org/dgflex/project/Greeting.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/composeApp/src/commonMain/kotlin/org/dgflex/project/Platform.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/composeApp/src/commonTest/kotlin/org/dgflex/project/ComposeAppCommonTest.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/composeApp/src/iosMain/kotlin/org/dgflex/project/MainViewController.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/composeApp/src/iosMain/kotlin/org/dgflex/project/Platform.ios.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/composeApp/src/jsMain/kotlin/org/dgflex/project/Platform.js.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/composeApp/src/jvmMain/kotlin/org/dgflex/project/Platform.jvm.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/composeApp/src/jvmMain/kotlin/org/dgflex/project/main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/composeApp/src/wasmJsMain/kotlin/org/dgflex/project/Platform.wasmJs.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/composeApp/src/webMain/kotlin/org/dgflex/project/main.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/composeApp/src/webMain/resources/index.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/composeApp/src/webMain/resources/styles.css" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/gradle.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/gradle/libs.versions.toml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/iosApp/Configuration/Config.xcconfig" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/iosApp/iosApp.xcodeproj/project.pbxproj" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/iosApp/iosApp.xcodeproj/project.xcworkspace/contents.xcworkspacedata" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/iosApp/iosApp/Assets.xcassets/AccentColor.colorset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/iosApp/iosApp/Assets.xcassets/AppIcon.appiconset/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/iosApp/iosApp/Assets.xcassets/AppIcon.appiconset/app-icon-1024.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/iosApp/iosApp/Assets.xcassets/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/iosApp/iosApp/ContentView.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/iosApp/iosApp/Info.plist" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/iosApp/iosApp/Preview Content/Preview Assets.xcassets/Contents.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/iosApp/iosApp/iOSApp.swift" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/bfp_calculator/bfp_calculator.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/bfp_calculator/bfp_calculator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/bmi_calculator/bmi_calculator.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/bmi_calculator/bmi_calculator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/calculator_menu/calculator.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/calculator_menu/menu_search.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/creatine_calculator/creatine_calculator.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/creatine_calculator/creatine_calculator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/dots_calculator/dots_calculator.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/dots_calculator/dots_calculator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/hr_zone_calculator/hr_zone_calculator.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/hr_zone_calculator/hr_zone_calculator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/ibw_calculator/ibw_calculator.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/ibw_calculator/ibw_calculator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/macro_calculator/macro_calculator.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/macro_calculator/macro_calculator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/meal_planner/meal_planner.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/meal_planner/meal_planner.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/onerm_calculator/onerm_calculator.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/onerm_calculator/onerm_calculator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/pace_calculator/pace_calculator.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/pace_calculator/pace_calculator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/plate_calculator/plate_calculator.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/plate_calculator/plate_calculator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/progression_planner/progression_planner.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/progression_planner/progression_planner.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/projection_calculator/projection_calculator.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/projection_calculator/projection_calculator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/protein_calculator/protein_calculator.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/protein_calculator/protein_calculator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/refeed_calculator/refeed_calculator.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/refeed_calculator/refeed_calculator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/sleep_calculator/sleep_calculator.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/sleep_calculator/sleep_calculator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/supplement_guide/supplement_guide.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/supplement_guide/supplement_guide.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/tdee_calculator/tdee_calculator.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/tdee_calculator/tdee_calculator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/vo2max_calculator/vo2max_calculator.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/vo2max_calculator/vo2max_calculator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/volume_calculator/volume_calculator.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/volume_calculator/volume_calculator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/water_calculator/water_calculator.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/water_calculator/water_calculator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/whr_calculator/whr_calculator.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/reference/whr_calculator/whr_calculator.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/DG Flex/settings.gradle.kts" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "nathamchatsuwan-lang"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/nathamchatsuwan-lang/CP213_LearnAndroid.git",
+    "accountId": "e970a163-266d-4d25-a85d-be8500f2703e"
+  }
+}]]></component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 7
+}]]></component>
+  <component name="ProjectId" id="3CfStjATet5EgvsTCHLz2dRQlz7" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "main",
+    "kotlin-language-version-configured": "true",
+    "settings.editor.selected.configurable": "AndroidSdkUpdater"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c5c287a9-acb3-4b77-bf41-57f1bdf695c5" name="Changes" comment="" />
+      <created>1776775347737</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1776775347737</updated>
+    </task>
+    <servers />
+  </component>
+</project>
