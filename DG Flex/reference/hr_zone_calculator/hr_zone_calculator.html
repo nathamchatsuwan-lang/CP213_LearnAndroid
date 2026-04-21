@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เครื่องคำนวณโซนหัวใจ (HR Zone) - DG Gym</title>
+    <link rel="stylesheet" href="../../asset/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        .zone-table .result-label { flex: 2; }
+        .zone-table .result-value-box { flex: 3; text-align: left; padding-left: 20px;}
+        .zone-color-box {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 3px;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+    </style>
+</head>
+<body data-path-prefix="../../">
+    <div id="preloader">
+    <i id="loader" class="fas fa-dumbbell"></i>
+</div>
+    <header></header>
+    <nav></nav>
+
+    <main>
+        <div class="calculator-container">
+            <h2>คำนวณโซนอัตราการเต้นหัวใจ (Heart Rate Zone)</h2>
+            <p>ค้นหาโซนหัวใจที่เหมาะสมกับการออกกำลังกายของคุณเพื่อผลลัพธ์ที่ดีที่สุด</p>
+            
+            <div class="form-group">
+                <label for="hr-age">อายุ (ปี)</label>
+                <input type="number" id="hr-age" min="1" max="120" placeholder="เช่น 30">
+            </div>
+
+            <button id="calculate-hr-btn" class="btn-primary">คำนวณโซนหัวใจ</button>
+
+            <div id="hr-result">
+                </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 DG Gym. All rights reserved.</p>
+    </footer>
+    <script type="module" src="../../asset/js/firebase-config.js"></script>
+    <script src="hr_zone_calculator.js"></script>
+    <script type="module" src="../../asset/js/main.js"></script>
+
+</body>
+</html>

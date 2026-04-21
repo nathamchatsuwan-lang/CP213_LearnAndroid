@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เครื่องคำนวณน้ำหนักในอุดมคติ (IBW) - DG Gym</title>
+    <link rel="stylesheet" href="../../asset/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body data-path-prefix="../../">
+    <div id="preloader">
+    <i id="loader" class="fas fa-dumbbell"></i>
+</div>
+    <header></header>
+    <nav></nav>
+
+    <main>
+        <div class="calculator-container">
+            <h2>คำนวณน้ำหนักในอุดมคติ (Ideal Body Weight)</h2>
+            <p>ประเมินช่วงน้ำหนักที่เหมาะสมจากส่วนสูงและเพศของคุณ โดยอ้างอิงจากหลายสูตรคำนวณยอดนิยม</p>
+            
+            <div class="form-group">
+                <label>เพศ</label>
+                <div class="gender-options">
+                    <input type="radio" id="male" name="gender" value="male" checked>
+                    <label for="male">ชาย</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">หญิง</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="ibw-height">ส่วนสูง</label>
+                <div style="display: flex; gap: 10px;">
+                    <input type="number" id="ibw-height" min="1" placeholder="กรอกส่วนสูง" style="flex: 2;">
+                    <select id="units" style="flex: 1;">
+                        <option value="cm" selected>ซม.</option>
+                        <option value="in">นิ้ว</option>
+                    </select>
+                </div>
+            </div>
+
+            <button id="calculate-ibw-btn" class="btn-primary">คำนวณน้ำหนัก</button>
+
+            <div id="ibw-result">
+                </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 DG Gym. All rights reserved.</p>
+    </footer>
+    <script type="module" src="../../asset/js/firebase-config.js"></script>
+    <script src="ibw_calculator.js"></script>
+    <script type="module" src="../../asset/js/main.js"></script>
+
+</body>
+</html>

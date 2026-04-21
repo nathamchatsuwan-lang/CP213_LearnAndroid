@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เครื่องคำนวณการนอนหลับ - DG Gym</title>
+    <link rel="stylesheet" href="../../asset/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        .bedtime-option {
+            background-color: #f0faff;
+            border: 1px solid #cce5ff;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            font-size: 1.2em;
+            font-weight: bold;
+            text-align: center;
+            color: #004085;
+        }
+        .bedtime-option .sub-text {
+            font-size: 0.7em;
+            font-weight: normal;
+            color: #555;
+        }
+    </style>
+</head>
+<body data-path-prefix="../../">
+    <div id="preloader">
+    <i id="loader" class="fas fa-dumbbell"></i>
+</div>
+
+    <header></header>
+    <nav></nav>
+
+    <main>
+        <div class="calculator-container">
+            <h2>วางแผนการนอนหลับ (Sleep Calculator)</h2>
+            <p>ตื่นนอนอย่างสดชื่น! คำนวณเวลาเข้านอนที่เหมาะสมโดยอิงจากรอบการนอนหลับ (Sleep Cycle)</p>
+            
+            <div class="form-group">
+                <label for="wake-up-time">เวลาที่ต้องการตื่นนอน</label>
+                <input type="time" id="wake-up-time" value="07:00" style="padding: 12px; font-size: 1.2em; text-align: center;">
+            </div>
+
+            <button id="calculate-sleep-btn" class="btn-primary">คำนวณเวลาเข้านอน</button>
+
+            <div id="sleep-result" style="margin-top: 20px;">
+                </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 DG Gym. All rights reserved.</p>
+    </footer>
+    <script type="module" src="../../asset/js/firebase-config.js"></script>
+    <script src="sleep_calculator.js"></script>
+    <script type="module" src="../../asset/js/main.js"></script>
+
+</body>
+</html>

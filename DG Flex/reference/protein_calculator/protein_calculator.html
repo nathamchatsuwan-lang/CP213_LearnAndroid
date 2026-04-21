@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เครื่องคำนวณโปรตีนต่อวัน - DG Gym</title>
+    <link rel="stylesheet" href="../../asset/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body data-path-prefix="../../">
+    <div id="preloader">
+    <i id="loader" class="fas fa-dumbbell"></i>
+</div>
+    <header></header>
+    <nav></nav>
+
+    <main>
+        <div class="calculator-container">
+            <h2>คำนวณปริมาณโปรตีนที่ต้องการต่อวัน</h2>
+            <p>ค้นหาปริมาณโปรตีนที่เหมาะสมกับร่างกายและเป้าหมายการออกกำลังกายของคุณ</p>
+            
+            <div class="form-group">
+                <label for="protein-weight">น้ำหนักตัว</label>
+                <div style="display: flex; gap: 10px;">
+                    <input type="number" id="protein-weight" min="1" placeholder="กรอกน้ำหนัก" style="flex: 2;">
+                    <select id="weight-units" style="flex: 1;">
+                        <option value="kg" selected>กก.</option>
+                        <option value="lbs">ปอนด์</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="activity-goal">เป้าหมาย / ระดับกิจกรรม</label>
+                <select id="activity-goal">
+                    <option value="sedentary" selected>คนทั่วไป (ไม่ค่อยออกกำลังกาย)</option>
+                    <option value="active">คนแอคทีฟ / รักษากล้ามเนื้อ</option>
+                    <option value="muscle-gain">ต้องการสร้างกล้ามเนื้อ</option>
+                    <option value="fat-loss">ต้องการลดไขมัน (รักษากล้ามเนื้อ)</option>
+                </select>
+            </div>
+
+            <button id="calculate-protein-btn" class="btn-primary">คำนวณโปรตีน</button>
+
+            <div id="protein-result">
+                </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 DG Gym. All rights reserved.</p>
+    </footer>
+    <script type="module" src="../../asset/js/firebase-config.js"></script>
+    <script src="protein_calculator.js"></script>
+    <script type="module" src="../../asset/js/main.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เครื่องคำนวณปริมาณน้ำที่ควรดื่ม - DG Gym</title>
+    <link rel="stylesheet" href="../../asset/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body data-path-prefix="../../">
+    <div id="preloader">
+    <i id="loader" class="fas fa-dumbbell"></i>
+</div>
+    <header></header>
+    <nav></nav>
+
+    <main>
+        <div class="calculator-container">
+            <h2>คำนวณปริมาณน้ำที่ควรดื่มต่อวัน</h2>
+            <p>ร่างกายของคุณต้องการน้ำเท่าไหร่? คำนวณปริมาณน้ำที่ควรดื่มในแต่ละวันจากน้ำหนักตัวของคุณ</p>
+            
+             <div class="form-group">
+                <label for="water-weight">น้ำหนักตัว</label>
+                <div style="display: flex; gap: 10px;">
+                    <input type="number" id="water-weight" min="1" placeholder="กรอกน้ำหนัก" style="flex: 2;">
+                    <select id="weight-units" style="flex: 1;">
+                        <option value="kg" selected>กก.</option>
+                        <option value="lbs">ปอนด์</option>
+                    </select>
+                </div>
+            </div>
+
+            <button id="calculate-water-btn" class="btn-primary">คำนวณ</button>
+
+            <div id="water-result">
+                </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 DG Gym. All rights reserved.</p>
+    </footer>
+    <script type="module" src="../../asset/js/firebase-config.js"></script>
+    <script src="water_calculator.js"></script>
+    <script type="module" src="../../asset/js/main.js"></script>
+</body>
+</html>

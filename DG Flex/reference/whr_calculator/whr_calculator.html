@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เครื่องคำนวณ WHR (สัดส่วนเอวต่อสะโพก) - DG Gym</title>
+    <link rel="stylesheet" href="../../asset/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body data-path-prefix="../../">
+    <div id="preloader">
+    <i id="loader" class="fas fa-dumbbell"></i>
+</div>
+    <header></header>
+    <nav></nav>
+
+    <main>
+        <div class="calculator-container">
+            <h2>คำนวณสัดส่วนรอบเอวต่อสะโพก (WHR)</h2>
+            <p>ประเมินการกระจายไขมันในร่างกายและความเสี่ยงต่อสุขภาพที่เกี่ยวข้อง</p>
+            
+            <div class="form-group">
+                <label for="units">เลือกหน่วยวัด</label>
+                <select id="units">
+                    <option value="cm" selected>เซนติเมตร (cm)</option>
+                    <option value="in">นิ้ว (inches)</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>เพศ</label>
+                <div class="gender-options">
+                    <input type="radio" id="male" name="gender" value="male" checked>
+                    <label for="male">ชาย</label>
+                    <input type="radio" id="female" name="gender" value="female">
+                    <label for="female">หญิง</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="whr-waist">รอบเอว</label>
+                <input type="number" id="whr-waist" min="1" placeholder="วัดส่วนที่คอดที่สุด">
+            </div>
+
+            <div class="form-group">
+                <label for="whr-hip">รอบสะโพก</label>
+                <input type="number" id="whr-hip" min="1" placeholder="วัดส่วนที่กว้างที่สุด">
+            </div>
+
+
+            <button id="calculate-whr-btn" class="btn-primary">คำนวณ WHR</button>
+
+            <div id="whr-result" class="bmi-result-container">
+                </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 DG Gym. All rights reserved.</p>
+    </footer>
+    <script type="module" src="../../asset/js/firebase-config.js"></script>
+    <script src="whr_calculator.js"></script>
+    <script type="module" src="../../asset/js/main.js"></script>
+</body>
+</html>

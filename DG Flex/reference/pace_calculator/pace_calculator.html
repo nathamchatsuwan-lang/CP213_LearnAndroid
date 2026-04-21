@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เครื่องคำนวณ Pace สำหรับวิ่ง - DG Gym</title>
+    <link rel="stylesheet" href="../../asset/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <style>
+        .input-group {
+            border: 1px solid #e0e0e0;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+        }
+        .input-group.disabled {
+            background-color: #fafafa;
+            opacity: 0.7;
+        }
+        .input-group-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+            gap: 10px;
+        }
+    </style>
+</head>
+<body data-path-prefix="../../">
+    <div id="preloader">
+    <i id="loader" class="fas fa-dumbbell"></i>
+</div>
+    <header></header>
+    <nav></nav>
+
+    <main>
+        <div class="calculator-container">
+            <h2>คำนวณ Pace, เวลา, และระยะทางสำหรับวิ่ง</h2>
+            <p>เลือกสิ่งที่คุณต้องการคำนวณ แล้วกรอกข้อมูลใน 2 ช่องที่เหลือ</p>
+            
+            <div class="form-group">
+                <label>เลือกสิ่งที่จะคำนวณ:</label>
+                <div class="gender-options">
+                    <input type="radio" id="calc-pace" name="calc-mode" value="pace" checked> <label for="calc-pace">Pace</label>
+                    <input type="radio" id="calc-time" name="calc-mode" value="time"> <label for="calc-time">เวลา</label>
+                    <input type="radio" id="calc-dist" name="calc-mode" value="dist"> <label for="calc-dist">ระยะทาง</label>
+                </div>
+            </div>
+
+            <div id="distance-group" class="input-group">
+                <label>ระยะทาง</label>
+                <div class="input-group-grid">
+                    <input type="number" id="dist-val" placeholder="10" style="grid-column: span 2;">
+                    <select id="dist-unit">
+                        <option value="km">กิโลเมตร</option>
+                        <option value="mi">ไมล์</option>
+                    </select>
+                </div>
+            </div>
+
+            <div id="time-group" class="input-group">
+                <label>เวลา</label>
+                <div class="input-group-grid">
+                    <input type="number" id="time-hr" placeholder="ชั่วโมง">
+                    <input type="number" id="time-min" placeholder="นาที">
+                    <input type="number" id="time-sec" placeholder="วินาที">
+                </div>
+            </div>
+
+            <div id="pace-group" class="input-group">
+                <label>Pace</label>
+                <div class="input-group-grid">
+                    <input type="number" id="pace-min" placeholder="นาที">
+                    <input type="number" id="pace-sec" placeholder="วินาที">
+                    <select id="pace-unit">
+                        <option value="min/km">/ กม.</option>
+                        <option value="min/mi">/ ไมล์</option>
+                    </select>
+                </div>
+            </div>
+
+
+            <button id="calculate-pace-btn" class="btn-primary">คำนวณ</button>
+
+            <div id="pace-result">
+                </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 DG Gym. All rights reserved.</p>
+    </footer>
+    <script type="module" src="../../asset/js/firebase-config.js"></script>
+    <script src="pace_calculator.js"></script>
+    <script type="module" src="../../asset/js/main.js"></script>
+
+</body>
+</html>

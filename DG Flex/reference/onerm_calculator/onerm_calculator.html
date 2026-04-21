@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>เครื่องคำนวณ 1RM (One Rep Max) - DG Gym</title>
+    <link rel="stylesheet" href="../../asset/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+</head>
+<body data-path-prefix="../../">
+    <div id="preloader">
+    <i id="loader" class="fas fa-dumbbell"></i>
+</div>
+    <header></header>
+    <nav></nav>
+
+    <main>
+        <div class="calculator-container">
+            <h2>ประมาณค่าน้ำหนักสูงสุดที่ยกได้ 1 ครั้ง (1RM)</h2>
+            <p>คำนวณ 1RM ของคุณเพื่อใช้ออกแบบโปรแกรมฝึกซ้อมได้อย่างมีประสิทธิภาพ</p>
+            
+            <div class="form-group">
+                <label for="onerm-weight">น้ำหนักที่ยก</label>
+                <div style="display: flex; gap: 10px;">
+                    <input type="number" id="onerm-weight" min="1" placeholder="กรอกน้ำหนัก" style="flex: 2;">
+                    <select id="weight-units" style="flex: 1;">
+                        <option value="kg" selected>กก.</option>
+                        <option value="lbs">ปอนด์</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="onerm-reps">จำนวนครั้งที่ทำได้ (ไม่เกิน 12 ครั้ง)</label>
+                <input type="number" id="onerm-reps" min="1" max="12" placeholder="เช่น 8">
+            </div>
+
+            <button id="calculate-onerm-btn" class="btn-primary">คำนวณ 1RM</button>
+
+            <div id="onerm-result">
+                </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 DG Gym. All rights reserved.</p>
+    </footer>
+    <script type="module" src="../../asset/js/firebase-config.js"></script>
+    <script src="onerm_calculator.js"></script>
+    <script type="module" src="../../asset/js/main.js"></script>
+
+</body>
+</html>
