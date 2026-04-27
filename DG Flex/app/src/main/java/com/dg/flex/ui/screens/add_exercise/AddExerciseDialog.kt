@@ -50,7 +50,7 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalWindowInfo
 import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.text.input.ImeAction
-import coil3.compose.AsyncImage
+
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.generated.destinations.ExerciseStatsDestination
 import com.ramcosta.composedestinations.generated.destinations.ExercisesByMuscleDestination
@@ -257,31 +257,7 @@ fun SharedTransitionScope.AddExerciseDialog(
                     .imePadding(),
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                item {
-                    AsyncImage(
-                        exercise.image,
-                        stringResource(R.string.exercise_image),
-                        contentScale = ContentScale.Crop,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .height(imageHeight)
-                            .padding(bottom = 16.dp)
-                            .sharedElement(
-                                rememberSharedContentState(
-                                    SharedElementKey(
-                                        "AddExerciseDialog",
-                                        SharedElementType.Image,
-                                        idLong = exercise.exerciseId
-                                    )
-                                ),
-                                animatedVisibilityScope,
-                                boundsTransform = { _, _ ->
-                                    MotionScheme.expressive().slowSpatialSpec()
-                                }
-                            )
-                            .clip(AbsoluteRoundedCornerShape(0.dp, 0.dp, 12.dp, 12.dp))
-                    )
-                }
+
 
                 item {
                     Row(

@@ -31,9 +31,7 @@ import androidx.compose.ui.res.dimensionResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import androidx.core.content.res.ResourcesCompat.ID_NULL
-import coil3.compose.AsyncImage
-import coil3.request.ImageRequest
-import coil3.request.crossfade
+
 import com.dg.flex.shared.Equipment
 import com.dg.flex.shared.barbellResFromWeight
 
@@ -50,21 +48,7 @@ fun LazyListScope.ExerciseRecordsList(
             .fillMaxWidth()
             .padding(bottom = 8.dp)
             .padding(horizontal = 16.dp)){
-            if (exercise.image != ID_NULL) {
-                AsyncImage(
-                    model = ImageRequest.Builder(LocalContext.current)
-                        .data(exercise.image)
-                        .crossfade(true)
-                        .build(),
-                    contentScale = ContentScale.Crop,
-                    contentDescription = stringResource(R.string.exercise_image),
-                    modifier = Modifier
-                        .fillMaxWidth()
-                        .height(with(LocalDensity.current) { LocalWindowInfo.current.containerSize.width.toDp() } / 4)
-                        .align(Alignment.CenterHorizontally)
-                        .clip(RoundedCornerShape(12.dp))
-                )
-            }
+
             Column(Modifier.padding(dimensionResource(R.dimen.card_inner_padding))) {
                 if (exercise.name.isNotEmpty())
                     Text(text = exercise.name + exercise.variation, style = MaterialTheme.typography.titleLarge)

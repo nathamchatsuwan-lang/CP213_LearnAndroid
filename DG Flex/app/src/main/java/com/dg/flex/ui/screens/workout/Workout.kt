@@ -74,11 +74,7 @@ import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.stateDescription
 import androidx.compose.ui.semantics.traversalIndex
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
-import coil3.compose.AsyncImage
-import coil3.request.ImageRequest
-import coil3.request.allowHardware
-import coil3.request.crossfade
-import coil3.toBitmap
+
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.annotation.parameters.DeepLink
 import com.ramcosta.composedestinations.generated.destinations.ExercisesByMuscleDestination
@@ -317,7 +313,7 @@ fun SharedTransitionScope.Workout(
     // if bright image (i.e., white), change status bar icons to dark
     val brightImage = remember { mutableStateOf(false) }
     val imageWidth = with (LocalDensity.current) { LocalWindowInfo.current.containerSize.width.toDp() }
-    val imageHeight = imageWidth/3*2
+    val imageHeight = 0.dp
     val systemTheme = isSystemInDarkTheme()
     val useDarkTheme by remember { derivedStateOf {
         when (workoutState.userTheme) {
@@ -469,101 +465,7 @@ fun SharedTransitionScope.Workout(
                 }
             },
             title = titleTopBar,
-            image = {
-                val roundedCornersShape = MaterialTheme.shapes.extraLarge.copy(
-                    topStart = ZeroCornerSize,
-                    topEnd = ZeroCornerSize
-                )
-
-                // preview image is placed below (z-wise) the actual image
-                // actual image will fade in and cover the preview image
-                Box(Modifier
-                    .wrapContentHeight(Top), contentAlignment = TopCenter) {
-                    // we need to fade preview image, otherwise it will be visible everytime a new image buffers
-                    AnimatedVisibility(
-                        !previewImageShouldDisappear,
-                        enter = EnterTransition.None,
-                        exit = fadeOut(MaterialTheme.motionScheme.slowEffectsSpec())
-                    ) {
-                        AsyncImage(
-                            ImageRequest.Builder(context)
-                                .data(previewExercise?.image ?: R.drawable.finish_workout)
-                                .crossfade(true)
-                                .build(),
-                            stringResource(R.string.exercise_image),
-                            Modifier
-                                .fillMaxWidth()
-                                .height(imageHeight)
-                                .graphicsLayer(
-                                    shape = roundedCornersShape,
-                                    clip = true
-                                )
-                                .sharedBounds(
-                                    sharedStateImg,
-                                    animatedVisibilityScope,
-                                    clipInOverlayDuringTransition = OverlayClip(roundedCornersShape),
-                                    boundsTransform = { _, _ ->
-                                        MotionScheme.expressive().slowSpatialSpec()
-                                    }
-                                ).graphicsLayer(
-                                    shape = roundedCornersShape,
-                                    clip = true
-                                ),
-                            contentScale = ContentScale.Crop
-                        )
-                    }
-                    AnimatedVisibility(
-                        visible = containerTransitionFinished && !currentExerciseState.isLoading,
-                        enter = EnterTransition.None,
-                        exit = fadeOut(MaterialTheme.motionScheme.fastEffectsSpec())
-                    ) {
-                        AsyncImage(
-                            ImageRequest.Builder(context)
-                                .allowHardware(false) // pixel access is not supported on Config#HARDWARE bitmaps
-                                .data(currentImageId)
-    //                                    .crossfade(true)
-                                .listener { _, result ->
-                                    val image = result.image.toBitmap()
-                                    Palette.from(image).maximumColorCount(3)
-                                        .clearFilters()
-                                        .setRegion(0, 0, image.width,50)
-                                        .generate {
-                                            brightImage.value = (ColorUtils.calculateLuminance(it?.getDominantColor(Color.Black.toArgb()) ?: 0)) > 0.5
-                                        }
-                                }
-                                .build(),
-                            stringResource(R.string.exercise_image),
-                            Modifier
-                                .fillMaxWidth()
-                                .height(imageHeight)
-                                .sharedBounds(
-                                    sharedStateImg,
-                                    animatedVisibilityScope,
-                                    clipInOverlayDuringTransition = OverlayClip(roundedCornersShape),
-                                    boundsTransform = { _, _ ->
-                                        MotionScheme.expressive().slowSpatialSpec()
-                                    }
-                                ).graphicsLayer(
-                                    shape = roundedCornersShape,
-                                    clip = true
-                                ),
-                            contentScale = ContentScale.Crop
-                        )
-                    }
-                    AnimatedVisibility(
-                        visible = containerTransitionFinished && !currentExerciseState.isLoading,
-                        enter = fadeIn(MaterialTheme.motionScheme.fastEffectsSpec()),
-                        exit = fadeOut(MaterialTheme.motionScheme.fastEffectsSpec()),
-                        modifier = Modifier
-                            .align(Alignment.BottomCenter)
-                            .padding(16.dp)
-                    ) {
-                        HorizontalPagerIndicator(
-                            pagerState = pagerState,
-                        )
-                    }
-                }
-            },
+            image = {},
             snackbarHost = { SnackbarHost(snackbarHostState) },
             cardShape = MaterialTheme.shapes.extraLarge as RoundedCornerShape,
             floatingActionButton = {

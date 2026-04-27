@@ -34,7 +34,7 @@ import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalWindowInfo
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.Dp
-import coil3.compose.AsyncImage
+
 import com.ramcosta.composedestinations.generated.destinations.AddProgramExerciseDestination
 import com.ramcosta.composedestinations.generated.destinations.WorkoutDestination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
@@ -80,44 +80,7 @@ fun WorkoutCard(
     )
     {
         Column {
-            if (exercises.isNotEmpty()) {
-                Box(
-                    Modifier.wrapContentHeight(Alignment.Top),
-                    contentAlignment = Alignment.TopCenter
-                ) {
-                    val imageWidth = with (LocalDensity.current) {
-                        LocalWindowInfo.current.containerSize.width.toDp()
-                    }
-                    val imageHeight = imageWidth/3*2
-                    
-                    val roundedCornersShape = cardShape
-                    HorizontalPager(state = pagerState,
-                        modifier = Modifier.graphicsLayer {
-                            shape = roundedCornersShape
-                            clip = true
-                        }
-                        .then(imageModifier)) { page ->
-                        Box (Modifier.fillMaxWidth()) {
-                            AsyncImage(
-                                model = exercises[page].image,
-                                contentDescription = stringResource(R.string.exercise_image),
-                                contentScale = ContentScale.Crop,
-                                modifier = Modifier
-                                    .fillMaxWidth()
-                                    .height(imageHeight)
-                                    .align(Alignment.TopCenter)
-                            )
-                        }
-                    }
-                    HorizontalPagerIndicator(
-                        pagerState = pagerState,
-                        pageCount = exercises.size,
-                        modifier = Modifier
-                            .align(Alignment.BottomCenter)
-                            .padding(16.dp),
-                    )
-                }
-            }
+
             Row{
                 Text(
                     text = getProgramDisplayName(program.name),

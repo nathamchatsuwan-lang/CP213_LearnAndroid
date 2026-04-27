@@ -60,9 +60,7 @@ import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.generated.destinations.AddExerciseDialogDestination
 import com.ramcosta.composedestinations.generated.destinations.CreateExerciseDialogDestination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
-import coil3.compose.AsyncImage
-import coil3.request.ImageRequest
-import coil3.request.crossfade
+
 import com.dg.flex.shared.Equipment
 import com.dg.flex.ui.common.lazyGroupedCard
 import kotlinx.coroutines.android.awaitFrame
@@ -157,9 +155,6 @@ fun SharedTransitionScope.ViewExercises(
                 scrollBehavior = scrollBehavior
             )
         }, content = { innerPadding ->
-            var isLongPressing = remember { mutableStateOf(false) }
-            var longPressImage = remember { mutableIntStateOf(R.drawable.finish_workout) }
-
             Box (contentAlignment = Center) {
                 LazyColumn(
                     contentPadding = innerPadding,
@@ -339,8 +334,6 @@ fun SharedTransitionScope.ViewExercises(
                                         ExerciseCard(
                                             result.exercise,
                                             result,
-                                            longPressImage,
-                                            isLongPressing,
                                         ) {
                                             scope.launch {
                                                 // Going directly to other screen from expanded search
@@ -405,10 +398,8 @@ fun SharedTransitionScope.ViewExercises(
                         ExerciseCard(
                             exercise,
                             result,
-                            longPressImage,
-                            isLongPressing,
-                            sharedTransitionScope,
-                            animatedVisibilityScope
+                            sharedTransitionScope = sharedTransitionScope,
+                            animatedVisibilityScope = animatedVisibilityScope
                         ) {
                             navigator.navigate(
                                 AddExerciseDialogDestination(
@@ -435,28 +426,6 @@ fun SharedTransitionScope.ViewExercises(
                     item {
                         Spacer(Modifier.height(8.dp))
                     }
-                }
-                AnimatedVisibility(
-                    visible = isLongPressing.value,
-                    enter = fadeIn() + scaleIn(),
-                    exit = fadeOut() + scaleOut()
-                ) {
-                    Image(painterResource(id = longPressImage.intValue),
-                        stringResource(R.string.bigger_exercise_image),
-                        Modifier
-                            .fillMaxWidth()
-                            .clip(RoundedCornerShape(12.dp)))
-//                    AsyncImage(
-//                        model = ImageRequest.Builder(LocalContext.current)
-//                            .data(longPressImage)
-//                            .crossfade(true)
-//                            .build(),
-//                        contentScale = ContentScale.FillWidth,
-//                        contentDescription = null,
-//                        modifier = Modifier
-//                            .fillMaxWidth()
-//                            .clip(RoundedCornerShape(12.dp))
-//                    )
                 }
             }
         })
@@ -528,20 +497,13 @@ fun EquipmentFilterChips(
 fun LazyItemScope.ExerciseCard(
     exercise: Exercise,
     result: ExerciseSearchResult?, // if user is searching, highlight this text
-    longPressImage: MutableIntState,
-    isLongPressing: MutableState<Boolean>,
     sharedTransitionScope: SharedTransitionScope? = null,
     animatedVisibilityScope: AnimatedVisibilityScope? = null,
     onExerciseClick: () -> Unit = {}
 ) {
     val haptic = LocalHapticFeedback.current
     val interactionSource = remember { MutableInteractionSource() }
-    val isPressing by interactionSource.collectIsPressedAsState()
 
-    LaunchedEffect(isPressing) {
-        longPressImage.intValue = exercise.image
-        isLongPressing.value = isPressing
-    }
     with (sharedTransitionScope) {
         val sharedCardModifier = this?.let {
             Modifier.sharedBounds(
@@ -610,20 +572,7 @@ fun LazyItemScope.ExerciseCard(
                         haptic.performHapticFeedback(HapticFeedbackType.LongPress)
                     })
         ) {
-            AsyncImage(
-                model = ImageRequest.Builder(LocalContext.current)
-                    .data(exercise.image)
-                    .crossfade(true)
-                    .build(),
-                contentScale = ContentScale.Crop,
-                contentDescription = stringResource(R.string.exercise_image),
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(with(LocalDensity.current) { LocalWindowInfo.current.containerSize.width.toDp() } / 4)
-                    .align(Alignment.CenterHorizontally)
-                    .then(sharedImageModifier)
-                    .clip(RoundedCornerShape(12.dp))
-            )
+
             Column(Modifier.padding(8.dp)) {
                 val nameRanges = result?.highlights
                     ?.filter { it.field == SearchField.Name && it.index == null }

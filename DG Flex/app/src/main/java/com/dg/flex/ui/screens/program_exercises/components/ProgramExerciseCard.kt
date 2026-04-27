@@ -65,11 +65,7 @@ import androidx.compose.ui.text.withStyle
 import androidx.compose.ui.unit.dp
 import androidx.core.graphics.ColorUtils
 import androidx.palette.graphics.Palette
-import coil3.compose.AsyncImage
-import coil3.request.ImageRequest
-import coil3.request.allowHardware
-import coil3.request.crossfade
-import coil3.toBitmap
+
 import com.ramcosta.composedestinations.generated.destinations.AddExerciseDialogDestination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import sh.calvin.reorderable.ReorderableItem
@@ -145,46 +141,6 @@ fun SharedTransitionScope.ProgramExerciseCard(
             ) {
                 this@ElevatedCard.AnimatedVisibility(!dragStarted.value) {
                     Box(Modifier.fillMaxWidth()) {
-                        AsyncImage(
-                            ImageRequest.Builder(context)
-                                .allowHardware(false)
-                                .data(exercise?.image ?: R.drawable.finish_workout)
-                                .crossfade(true)
-                                .listener { _, result ->
-                                    val image = result.image.toBitmap()
-                                    Palette.from(image).maximumColorCount(3)
-                                        .clearFilters()
-                                        .setRegion(image.width - 50, 0, image.width, 50)
-                                        .generate {
-                                            brightImage.value = (ColorUtils.calculateLuminance(
-                                                it?.getDominantColor(
-                                                    Color.Black.toArgb()
-                                                ) ?: 0
-                                            )) > 0.5
-                                        }
-                                }
-                                .build(),
-                            stringResource(R.string.exercise_image),
-                            Modifier
-                                .fillMaxWidth()
-                                .height(with(LocalDensity.current) { LocalWindowInfo.current.containerSize.width.toDp() } / 3)
-                                .align(Alignment.TopCenter)
-                                .sharedElement(
-                                    rememberSharedContentState(
-                                        SharedElementKey(
-                                            "AddExerciseDialog",
-                                            SharedElementType.Image,
-                                            idLong = programExercise.programExerciseId
-                                        )
-                                    ),
-                                    animatedVisibilityScope,
-                                    boundsTransform = BoundsTransform { _, _ ->
-                                        MotionScheme.expressive().slowSpatialSpec()
-                                    }
-                                )
-                                .clip(RoundedCornerShape(12.dp)),
-                            contentScale = ContentScale.Crop
-                        )
                         IconButton(
                             modifier = Modifier
                                 .align(Alignment.TopStart)
@@ -205,7 +161,7 @@ fun SharedTransitionScope.ProgramExerciseCard(
                             Icon(
                                 Icons.Rounded.DragHandle,
                                 contentDescription = stringResource(R.string.reorder_icon),
-                                tint = if (brightImage.value) Color.Black else Color.White
+                                tint = MaterialTheme.colorScheme.onSurface
                             )
                         }
                         Box(
@@ -217,7 +173,7 @@ fun SharedTransitionScope.ProgramExerciseCard(
                                 Icon(
                                     Icons.Default.MoreVert,
                                     contentDescription = stringResource(R.string.morevert_icon_options),
-                                    tint = if (brightImage.value) Color.Black else Color.White
+                                    tint = MaterialTheme.colorScheme.onSurface
                                 )
                             }
                             DropdownMenu(

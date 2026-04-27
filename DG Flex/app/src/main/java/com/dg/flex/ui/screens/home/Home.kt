@@ -58,7 +58,7 @@ import androidx.core.content.pm.ShortcutInfoCompat
 import androidx.core.content.pm.ShortcutManagerCompat
 import androidx.core.graphics.drawable.IconCompat
 import androidx.core.net.toUri
-import coil3.compose.AsyncImage
+
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.generated.destinations.AddProgramDestination
 import com.ramcosta.composedestinations.generated.destinations.AddProgramExerciseDestination
@@ -322,26 +322,7 @@ fun SharedTransitionScope.Home(
                                 }
 //                            resizeMode = SharedTransitionScope.ResizeMode.RemeasureToBounds
                             ),
-                        imageModifier = Modifier
-                            .sharedBounds(
-                                sharedContentState =
-                                    rememberSharedContentState(
-                                        SharedElementKey(
-                                            "Workout",
-                                            SharedElementType.Image,
-                                            idLong = currentProgram.programId
-                                        )
-                                    ),
-                                animatedVisibilityScope = animatedVisibilityScope,
-                                clipInOverlayDuringTransition = OverlayClip(MaterialTheme.shapes.extraLarge),
-                                boundsTransform = { _, _ ->
-                                    MotionScheme.expressive().slowSpatialSpec()
-                                }
-                            )
-                            .graphicsLayer(
-                                shape = MaterialTheme.shapes.extraLarge,
-                                clip = true
-                            ),
+
                         exerciseModifier = Modifier
                             .sharedElement(
                                 sharedContentState = rememberSharedContentState(
@@ -421,52 +402,7 @@ fun SharedTransitionScope.Home(
                                             .padding(12.dp) // Slightly reduced padding
                                     ) {
                                         // Exercise image pager
-                                        if (exs.isNotEmpty()) {
-                                            HorizontalPager(
-                                                state = pagerState,
-                                                userScrollEnabled = false,
-                                                modifier = Modifier
-                                                    .sharedBounds(
-                                                        sharedContentState = rememberSharedContentState(
-                                                            SharedElementKey(
-                                                                "Workout",
-                                                                SharedElementType.Image,
-                                                                idLong = program.programId
-                                                            )
-                                                        ),
-                                                        animatedVisibilityScope = animatedVisibilityScope,
-                                                        clipInOverlayDuringTransition = OverlayClip(
-                                                            MaterialTheme.shapes.small
-                                                        ),
-                                                        boundsTransform = { _, _ ->
-                                                            MotionScheme.expressive().slowSpatialSpec()
-                                                        }
-                                                    )
-                                                    .size(80.dp) // Smaller image for less emphasis
-                                                    .clip(MaterialTheme.shapes.small)
-                                            ) { page ->
-                                                AsyncImage(
-                                                    model = exs[page].image,
-                                                    contentDescription = stringResource(id = R.string.exercise_image),
-                                                    contentScale = ContentScale.Crop,
-                                                    modifier = Modifier.fillMaxSize(),
-                                                    colorFilter = ColorFilter.tint(
-                                                        Color.Black.copy(alpha = 0.1f),
-                                                        BlendMode.Darken
-                                                    ) // Subtle overlay for less prominence
-                                                )
-                                            }
 
-                                            LaunchedEffect(state.animationTick) {
-                                                if (!animatedVisibilityScope.transition.isRunning) {
-                                                    pagerState.animateScrollToPage(
-                                                        (pagerState.currentPage + 1) % exs.size
-                                                    )
-                                                }
-                                            }
-                                        }
-
-                                        Spacer(modifier = Modifier.width(12.dp))
 
                                         // Program info column
                                         Column(

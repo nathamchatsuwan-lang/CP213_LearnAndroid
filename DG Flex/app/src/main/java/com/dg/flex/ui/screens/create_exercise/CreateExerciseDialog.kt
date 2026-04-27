@@ -52,7 +52,6 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.Dp
 import androidx.compose.ui.unit.times
-import coil3.compose.AsyncImage
 import com.dg.flex.shared.Equipment
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
@@ -560,18 +559,7 @@ private fun EquipmentCard(
                     }
                 )
             }
-            if (equipmentImageId != null) {
-                AsyncImage(
-                    model = equipmentImageId,
-                    contentDescription = null,
-                    modifier = Modifier.size(32.dp),
-                    colorFilter = if (isSelected) {
-                        ColorFilter.tint(MaterialTheme.colorScheme.onPrimaryContainer)
-                    } else {
-                        ColorFilter.tint(MaterialTheme.colorScheme.onSurfaceVariant)
-                    }
-                )
-            }
+
             Spacer(Modifier.height(4.dp))
             Text(
                 text = stringResource(equipment.equipmentNameResource),
@@ -620,14 +608,7 @@ private fun MuscleCard(
                 .fillMaxSize()
                 .padding(8.dp)
         ) {
-            // Use muscle.imageRes if available, otherwise use a default icon
-            AsyncImage(
-                model = muscle.imageRes,
-                contentDescription = null,
-                modifier = Modifier.size(32.dp),
-                placeholder = painterResource(R.drawable.full_body), // fallback
-                error = painterResource(R.drawable.full_body)
-            )
+
             Spacer(Modifier.height(4.dp))
             Text(
                 text = stringResource(muscle.muscleNameResource),
@@ -680,13 +661,7 @@ private fun SecondaryMuscleCard(
                 )
             )
             Spacer(Modifier.width(8.dp))
-            AsyncImage(
-                model = muscle.imageRes,
-                contentDescription = null,
-                modifier = Modifier.size(24.dp),
-                placeholder = painterResource(R.drawable.full_body),
-                error = painterResource(R.drawable.full_body)
-            )
+
             Spacer(Modifier.width(8.dp))
             Text(
                 text = stringResource(muscle.muscleNameResource),

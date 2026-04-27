@@ -25,7 +25,7 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.max
-import coil3.compose.AsyncImage
+
 import com.ramcosta.composedestinations.annotation.Destination
 import com.ramcosta.composedestinations.navigation.DestinationsNavigator
 import com.ramcosta.composedestinations.generated.destinations.ViewGeneratedPlanDestination
@@ -163,15 +163,7 @@ fun LazyListScope.goalChoicePage(completeGoal: (WorkoutPlanGoal) -> Unit){
             },
             modifier = Modifier.padding(horizontal = 16.dp)
         ) {
-            AsyncImage(
-                model = image,
-                contentDescription = stringResource(R.string.goal_i_image, goal),
-//                contentScale = ContentScale.FillWidth,
-                contentScale = ContentScale.Crop,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(200.dp)
-            )
+
             Text(
                 text = stringResource(goal.descResource),
                 style = MaterialTheme.typography.titleLarge,
@@ -212,14 +204,7 @@ fun LazyListScope.expertiseLevelPage(completeExpertise: (WorkoutPlanDifficulty) 
             },
             modifier = Modifier.padding(horizontal = 16.dp)
         ) {
-            AsyncImage(
-                model = image,
-                contentDescription = stringResource(R.string.goal_i_image, level),
-                contentScale = ContentScale.Crop,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(200.dp)
-            )
+
             Text(
                 text = stringResource(level.expertiseResource),
                 style = MaterialTheme.typography.titleLarge,
@@ -264,14 +249,7 @@ fun LazyListScope.workoutSplitPage(completeSplit: (WorkoutPlanSplit) -> Unit) {
             },
             modifier = Modifier.padding(horizontal = 16.dp)
         ) {
-            AsyncImage(
-                model = image,
-                contentDescription = stringResource(R.string.goal_i_image, split),
-                contentScale = ContentScale.Crop,
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .height(200.dp)
-            )
+
             Text(
                 text = stringResource(split.splitResource),
                 style = MaterialTheme.typography.titleLarge,

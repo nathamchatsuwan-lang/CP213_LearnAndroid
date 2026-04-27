@@ -44,7 +44,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import coil3.compose.AsyncImage
+
 
 
 object SwipeableMediaPlayingDefaults{
@@ -113,46 +113,19 @@ fun SwipeableMediaPlaying(
                 Box(
                     contentAlignment = Alignment.Center
                 ) {
-                    // big blurred artwork as background
-                    if (mediaState.artwork != null) {
-                        AsyncImage(
-                            mediaState.artwork,
-                            stringResource(R.string.song_artwork),
-                            contentScale = ContentScale.Crop,
-                            modifier = Modifier
-                                .matchParentSize()
-                                .blur(16.dp)
-                        )
-                        // Dimming scrim (dark overlay)
-                        Box(
-                            modifier = Modifier
-                                .matchParentSize()
-                                .background(Color.Black.copy(alpha = 0.3f))
-                        )
-                    }
+
                     Column (Modifier.padding(SwipeableMediaPlayingDefaults.innerPadding)) {
                         Row(
                             verticalAlignment = CenterVertically,
                             modifier = Modifier
                                 .fillMaxWidth()
                         ) {
-                            if (mediaState.artwork != null) {
-                                AsyncImage(
-                                    mediaState.artwork,
-                                    stringResource(R.string.song_artwork),
-                                    Modifier
-                                        .size(SwipeableMediaPlayingDefaults.artworkSize)
-                                        .clip(
-                                            RoundedCornerShape(8.dp)
-                                        )
-                                )
-                            } else {
+
                                 Icon(
                                     Icons.Default.MusicNote,
                                     stringResource(R.string.no_song_artwork_available),
                                     Modifier.size(SwipeableMediaPlayingDefaults.artworkSize)
                                 )
-                            }
                             Spacer(Modifier.width(8.dp))
                             Column(Modifier.weight(1f)) {
                                 Text(
@@ -160,20 +133,14 @@ fun SwipeableMediaPlaying(
                                     maxLines = 1,
                                     overflow = TextOverflow.Ellipsis,
                                     style = MaterialTheme.typography.labelMedium,
-                                    color = if (mediaState.artwork != null)
-                                        Color.White
-                                    else
-                                        MaterialTheme.colorScheme.inverseOnSurface
+                                    color = MaterialTheme.colorScheme.inverseOnSurface
                                 )
                                 Text(
                                     mediaArtist,
                                     maxLines = 1,
                                     overflow = TextOverflow.Ellipsis,
                                     style = MaterialTheme.typography.bodySmall,
-                                    color = if (mediaState.artwork != null)
-                                        Color.White
-                                    else
-                                        MaterialTheme.colorScheme.inverseOnSurface
+                                    color = MaterialTheme.colorScheme.inverseOnSurface
                                 )
                             }
                             // if we are just teasing, gain space by removing buttons
