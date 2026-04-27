@@ -16,18 +16,23 @@
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dg/flex/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dg/flex/MainActivity.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dg/flex/PrivacyPolicyActivity.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dg/flex/data/HealthConnectRepository.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dg/flex/data/PreferenceRepository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dg/flex/data/PreferenceRepository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dg/flex/data/Repository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dg/flex/data/Repository.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dg/flex/service/NotificationListener.kt" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dg/flex/ui/screens/home/Home.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dg/flex/ui/screens/home/Home.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dg/flex/ui/screens/profile/Profile.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dg/flex/ui/screens/profile/Profile.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dg/flex/ui/screens/profile/ProfileViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dg/flex/ui/screens/profile/ProfileViewModel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dg/flex/ui/screens/workout/Workout.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dg/flex/ui/screens/workout/Workout.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dg/flex/ui/screens/workout/WorkoutViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dg/flex/ui/screens/workout/WorkoutViewModel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dg/flex/ui/screens/workout/WorkoutViewModel.kt.bak" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dg/flex/ui/screens/workout_recap/RecapViewModel.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dg/flex/ui/screens/workout_recap/RecapViewModel.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dg/flex/ui/screens/workout_recap/WorkoutRecap.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dg/flex/ui/screens/workout_recap/WorkoutRecap.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/dg/flex/ui/theme/Theme.kt" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/dg/flex/ui/theme/Theme.kt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values-it/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values-it/strings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/colors.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/strings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/main/res/values/wear.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build.log" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build_final.log" beforeDir="false" />
@@ -40,6 +45,11 @@
       <change beforePath="$PROJECT_DIR$/implementation_plan.md" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/settings.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/settings.gradle.kts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/shared/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/com/dg/flex/shared/BitmapDataStoreHelper.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/com/dg/flex/shared/Const.kt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/com/dg/flex/shared/Utils.kt" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/com/dg/flex/shared/Utils.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/proto/info.proto" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/proto/info.proto" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/proto/workout.proto" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/proto/workout.proto" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/strip_profile.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />

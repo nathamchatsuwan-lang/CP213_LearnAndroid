@@ -19,18 +19,8 @@ gson = "2.13.2"
 room = "2.8.4"
 datastore = "1.2.1"
 core_ktx = "1.18.0"
-# wear os integration
-wearable_play_services = "19.0.0"
-wear_remote_interactions = "1.2.0"
-wear_ongoing = "1.1.0"  # ongoing activity
 kotlin_coroutines_play_services = "1.10.2"
-health = "1.1.0-rc01"
-# compose wear os
-wear_compose = "1.6.0-rc01"
-wear_compose_material3 = "1.6.0-rc01"
-wear_tooling_preview = "1.0.0"
 core_splashscreen = "1.2.0"
-horologist = "0.8.3-alpha"
 # other
 palette = "1.0.0"
 android_shapes = "1.1.0"
@@ -114,21 +104,7 @@ hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-lifecycle-view
 compose-destinations-core = { group = "io.github.raamcosta.compose-destinations", name = "core", version.ref = "destinations" }
 compose-destinations-bottom-sheet = { group = "io.github.raamcosta.compose-destinations", name = "bottom-sheet", version.ref = "destinations" }
 compose-destinations-ksp = { group = "io.github.raamcosta.compose-destinations", name = "ksp", version.ref = "destinations" }
-compose-destinations-wear = { group = "io.github.raamcosta.compose-destinations", name = "wear-core", version.ref = "destinations" }
 graphs = { group = "com.github.jaikeerthick", name = "Composable-Graphs", version.ref = "graphs" }
-wearable-play-services = { group = "com.google.android.gms", name = "play-services-wearable", version.ref = "wearable_play_services" }
-wear-remote-interactions = { group = "androidx.wear", name = "wear-remote-interactions", version.ref = "wear_remote_interactions" }
-wear-ongoing = { group = "androidx.wear", name = "wear-ongoing", version.ref = "wear_ongoing" }
-wear-compose-material3 = { group = "androidx.wear.compose", name = "compose-material3", version.ref = "wear_compose_material3" }
-wear-compose-foundation = { group = "androidx.wear.compose", name = "compose-foundation", version.ref = "wear_compose" }
-wear-compose-ui-tooling = { group = "androidx.wear.compose", name = "compose-ui-tooling", version.ref = "wear_compose_material3" }
-wear-tooling-preview = { group = "androidx.wear", name = "wear-tooling-preview", version.ref = "wear_tooling_preview" }
-horologist-material = { group = "com.google.android.horologist", name = "horologist-compose-material", version.ref = "horologist" }
-horologist-media-ui = { group = "com.google.android.horologist", name = "horologist-media-ui", version.ref = "horologist" }
-horologist-datalayer = { group = "com.google.android.horologist", name = "horologist-datalayer", version.ref = "horologist" }
-horologist-datalayer-grpc = { group = "com.google.android.horologist", name = "horologist-datalayer-grpc", version.ref = "horologist" }
-horologist-datalayer-watch = { group = "com.google.android.horologist", name = "horologist-datalayer-watch", version.ref = "horologist" }
-horologist-datalayer-phone = { group = "com.google.android.horologist", name = "horologist-datalayer-phone", version.ref = "horologist" }
 
 core-splashscreen = { group = "androidx.core", name = "core-splashscreen", version.ref = "core_splashscreen" }
 google-material = { group = "com.google.android.material", name = "material", version.ref = "google_material" }
@@ -138,7 +114,7 @@ ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitV
 android-shapes = { group = "androidx.graphics", name = "graphics-shapes", version.ref = "android_shapes" }
 kotlin-coroutines-play-services = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-play-services", version.ref = "kotlin_coroutines_play_services"}
 
-health-services = { group = "androidx.health", name = "health-services-client", version.ref = "health" }
+
 reorderable = { module = "sh.calvin.reorderable:reorderable", version.ref = "reorderable" }
 
 # plots

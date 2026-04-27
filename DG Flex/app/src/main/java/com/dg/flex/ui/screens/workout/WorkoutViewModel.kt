@@ -23,8 +23,6 @@ import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.dg.flex.shared.Equipment
-import com.dg.flex.shared.WORKOUT_IMAGES_PATH
-import com.dg.flex.shared.bitmapArrayStore
 import com.dg.flex.shared.maybeKgToLb
 import com.dg.flex.shared.maybeLbToKg
 import com.dg.flex.shared.toZonedDateTime
@@ -131,7 +129,6 @@ data class WorkoutState(
     val workoutId: Long = 0L,
     val imperialSystem: Boolean = false,
     val lockHorizontalScroll: Boolean = false,
-    val autoOpenWear: Boolean? = null, // set as null as we want to wait for the actual first value
     // TODO: really not happy about this. Belongs to WorkoutPagesContent but it was not to be
     //  updated directly by the user by the tares are
     val tares: List<Float> = emptyList(),
@@ -457,7 +454,6 @@ class WorkoutViewModel @Inject constructor(
                 preferences.getCableIncrement(),
                 preferences.getDontWantNotificationAccess(),
                 preferences.getLockHorizontalScroll(),
-                preferences.getAutoOpenWear(),
                 preferences.getDontWantOngoingWorkoutNotification()
             ) { values: Array<Any?> ->
                 _workoutState.update {
@@ -471,13 +467,12 @@ class WorkoutViewModel @Inject constructor(
                         incrementCable = values[6] as Float,
                         cantRequestNotificationAccess = values[7] as Boolean,
                         lockHorizontalScroll = values[8] as Boolean,
-                        autoOpenWear = values[9] as Boolean,
-                        cantRequestOngoingWorkoutNotification = values[10] as Boolean
+                        cantRequestOngoingWorkoutNotification = values[9] as Boolean
                     )
                 }
             }.collect()
         }
-        // listens to relevant changes and sends them to wear
+
 
         /*
           Compute stuff specific to current exercise (should be recomputed if any value changes)
@@ -1323,10 +1318,6 @@ class WorkoutViewModel @Inject constructor(
                 )
                 preferences.setCurrentWorkout(workoutId)
 
-                val autoOpenWear = workoutState.mapNotNull { it.autoOpenWear }.first()
-                if (autoOpenWear) {
-                    repository.openWearWorkout()
-                }
                 _workoutState.update {
                     it.copy(
                         startDate = currentDateTime,
@@ -1355,10 +1346,6 @@ class WorkoutViewModel @Inject constructor(
                     workoutStarted = true,
                     workoutId = workoutId
                 )
-            }
-            val autoOpenWear = workoutState.mapNotNull { it.autoOpenWear }.first()
-            if (autoOpenWear) {
-                // Wear OS removed
             }
             // TODO: scroll to last exercise completed
         } else {

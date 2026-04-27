@@ -67,10 +67,6 @@ class Repository @Inject constructor(
     private val db: WorkoutDatabase,
     @param:ApplicationContext  private val context: Context
 ) {
-    fun openWearWorkout() {
-        // Wear OS removed
-    }
-
     /*
      * WORKOUT PLAN
      */

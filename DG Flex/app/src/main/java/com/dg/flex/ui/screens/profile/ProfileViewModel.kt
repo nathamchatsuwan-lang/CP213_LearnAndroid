@@ -34,8 +34,7 @@ data class ProfileState(
     val isBackupLoading: Boolean = false,
     val isPreferencesBackupLoading: Boolean = false,
     val backupOutcomeResId: Int? = null,
-    val lockHorizontalScroll: Boolean = false,
-    val autoOpenWear: Boolean = false
+    val lockHorizontalScroll: Boolean = false
 )
 
 sealed class ProfileEvent{
@@ -64,8 +63,6 @@ sealed class ProfileEvent{
     data class SwitchImperialSystem(val newValue: Boolean): ProfileEvent()
 
     data class ToggleLockHorizontalScroll(val newValue: Boolean): ProfileEvent()
-
-    data class ToggleAutoOpenWear(val newValue: Boolean): ProfileEvent()
 
     data class ChangeLanguage(val newLanguage: String?): ProfileEvent()
 
@@ -106,7 +103,6 @@ class ProfileViewModel @Inject constructor(
                 preferences.getCableIncrement(),
                 preferences.getLanguage(),
                 preferences.getLockHorizontalScroll(),
-                preferences.getAutoOpenWear(),
             ) { values: Array<Any?> ->
                 _state.update {
                     it.copy(
@@ -124,7 +120,6 @@ class ProfileViewModel @Inject constructor(
                         incrementCable = values[11] as Float,
                         language = values[12] as String?,
                         lockHorizontalScroll = values[13] as Boolean,
-                        autoOpenWear = values[14] as Boolean,
                     )
                 }
             }.collect()
@@ -168,11 +163,6 @@ class ProfileViewModel @Inject constructor(
             is ProfileEvent.ToggleLockHorizontalScroll -> {
                 viewModelScope.launch {
                     preferences.setLockHorizontalScroll(event.newValue)
-                }
-            }
-            is ProfileEvent.ToggleAutoOpenWear -> {
-                viewModelScope.launch {
-                    preferences.setAutoOpenWear(event.newValue)
                 }
             }
             is ProfileEvent.UpdateTheme -> {

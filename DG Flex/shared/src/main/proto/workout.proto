@@ -105,23 +105,3 @@ service WorkoutService {
   rpc acceptModification(AcceptedModification) returns (google.protobuf.Empty);
 }
 
-message ExerciseToScrollTo {
-  int32 exercise_index = 1;
-}
-
-// set completed from phone; to be sent to watch for rest keeping
-message RestPhone2Watch {
-  int64 rest = 1;
-  google.protobuf.Timestamp rest_timestamp = 2;
-}
-
-// used by phone to tell watch stuff
-service WorkoutWearService {
-  // TODO: merge scrollToExercise into set rest, scroll to exercise should be a
-  //  side effect of a set completed on phone
-  rpc scrollToExercise(ExerciseToScrollTo) returns (google.protobuf.Empty);
-  rpc setRest(RestPhone2Watch) returns (google.protobuf.Empty);
-  // stops workout on watch
-  rpc stopWorkout(google.protobuf.Empty) returns (google.protobuf.Empty);
-  rpc getHealthData(google.protobuf.Empty) returns (CompleteWorkout);
-}

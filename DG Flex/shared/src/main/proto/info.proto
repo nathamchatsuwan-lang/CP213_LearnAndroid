@@ -25,6 +25,4 @@ service PhoneInfoService {
   rpc versionInfo(google.protobuf.Empty) returns (VersionInfo);
 }
 
-service WearInfoService {
-  rpc versionInfo(google.protobuf.Empty) returns (VersionInfo);
-}
+

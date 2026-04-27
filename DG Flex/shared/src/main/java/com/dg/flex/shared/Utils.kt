@@ -1,26 +1,9 @@
 package com.dg.flex.shared
 
-import com.dg.flex.shared.grpc.Info
-import android.net.Uri
 import androidx.compose.ui.res.stringResource
 import kotlin.math.round
 import androidx.compose.runtime.Composable
-import androidx.datastore.core.DataStore
-import androidx.datastore.core.Serializer
-import com.google.android.gms.wearable.CapabilityClient
-import com.google.android.gms.wearable.PutDataRequest
-import com.google.android.horologist.annotations.ExperimentalHorologistApi
-import com.google.android.horologist.data.ProtoDataStoreHelper.protoDataStore
-import com.google.android.horologist.data.TargetNodeId
-import com.google.android.horologist.data.WearDataLayerRegistry
-import com.google.android.horologist.data.store.impl.WearLocalDataStore
 import com.google.protobuf.Timestamp
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.flow.first
-import kotlinx.coroutines.sync.Mutex
-import kotlinx.coroutines.sync.withLock
-import kotlinx.coroutines.tasks.await
-import java.io.ByteArrayOutputStream
 import java.time.Instant
 import java.time.ZoneId
 import java.time.ZonedDateTime
@@ -113,19 +96,6 @@ fun Timestamp.toZonedDateTime(): ZonedDateTime? {
     )
 }
 
-// horologist has a TargetNodeId for paired phone but not for paired watch
-public object PairedWatch : TargetNodeId {
-    @OptIn(ExperimentalHorologistApi::class)
-    override suspend fun evaluate(dataLayerRegistry: WearDataLayerRegistry): String? {
-        val capabilitySearch = dataLayerRegistry.capabilityClient.getCapability(
-            TargetNodeId.HOROLOGIST_WATCH,
-            CapabilityClient.FILTER_ALL,
-        ).await()
-
-        return capabilitySearch.nodes.singleOrNull()?.id
-    }
-}
-
 data class PlateChange(
     val add: Map<Float, Int>,
     val remove: Map<Float, Int>
@@ -176,90 +146,3 @@ fun calculatePlateChange(oldWeight: Float, newWeight: Float): PlateChange {
     return PlateChange(add, remove)
 }
 
-/*
- * Same as Horologist's WearLocalDataStore but with urgent flag to send to wear immediately
- */
-@ExperimentalHorologistApi
-class UrgentWearLocalDataStore<T>(
-    private val delegate: WearLocalDataStore<T>,
-    private val serializer: Serializer<T>,
-    private val path: String,
-) : DataStore<T> by delegate {
-
-    private val mutex = Mutex()
-
-    override suspend fun updateData(transform: suspend (t: T) -> T): T = mutex.withLock {
-        // Read current value
-        val oldT = delegate.data.first()
-        val newT = transform(oldT)
-
-        if (newT == null) {
-            delegate.dataClient.deleteDataItems(buildUri(path))
-                .await()
-        } else if (newT != oldT) {
-            val request = PutDataRequest.create(path).apply {
-                data = writeBytes(newT)
-            }
-
-            delegate.dataClient.putDataItem(request).await()
-        }
-
-        return newT
-    }
-
-    suspend fun urgentUpdateData(transform: suspend (t: T) -> T): T = mutex.withLock {
-        // Read current value
-        val oldT = delegate.data.first()
-        val newT = transform(oldT)
-
-        if (newT == null) {
-            delegate.dataClient.deleteDataItems(buildUri(path))
-                .await()
-        } else if (newT != oldT) {
-            val request = PutDataRequest.create(path).apply {
-                data = writeBytes(newT)
-                setUrgent() // Add urgency flag
-            }
-
-            delegate.dataClient.putDataItem(request).await()
-        }
-
-        return newT
-    }
-
-    private suspend fun writeBytes(t: T): ByteArray {
-        return ByteArrayOutputStream().apply {
-            serializer.writeTo(t, this)
-        }.toByteArray()
-    }
-
-    private fun buildUri(path: String): Uri {
-        return Uri.Builder()
-            .scheme(PutDataRequest.WEAR_URI_SCHEME)
-            .path(path)
-            .build()
-    }
-}
-
-@OptIn(ExperimentalHorologistApi::class)
-inline fun <reified T : Any> WearDataLayerRegistry.urgentProtoDataStore(coroutineScope: CoroutineScope) =
-    UrgentWearLocalDataStore(
-        WearLocalDataStore(
-            this,
-            coroutineScope = coroutineScope,
-            serializer = serializers.serializerForType<T>(),
-            path = WearDataLayerRegistry.dataStorePath(T::class),
-        ),
-        serializers.serializerForType<T>(),
-        WearDataLayerRegistry.dataStorePath(T::class),
-    )
-
-operator fun Info.VersionName.compareTo(other: Info.VersionName): Int {
-    if (this.major != other.major)
-        return this.major - other.major
-    if (this.minor != other.minor)
-        return this.minor - other.minor
-    if (this.patch != other.patch)
-        return this.patch - other.patch
-    return 0
-}
