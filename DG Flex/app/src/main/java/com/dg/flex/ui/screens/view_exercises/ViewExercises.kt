@@ -463,26 +463,15 @@ fun EquipmentFilterChips(
                             modifier = Modifier.size(FilterChipDefaults.IconSize)
                         )
                     }
-                } else {
-                    if (equipmentIcon != null) {
-                        {
-                            Icon(
-                                equipmentIcon,
-                                contentDescription = null,
-                                modifier = Modifier.size(FilterChipDefaults.IconSize)
-                            )
-                        }
-                    } else {
-                        {
-                            AsyncImage(
-                                model = equipmentImage,
-                                contentDescription = null,
-                                modifier = Modifier.size(FilterChipDefaults.IconSize),
-                                colorFilter = ColorFilter.tint(MaterialTheme.colorScheme.primary)
-                            )
-                        }
+                } else if (equipmentIcon != null) {
+                    {
+                        Icon(
+                            equipmentIcon,
+                            contentDescription = null,
+                            modifier = Modifier.size(FilterChipDefaults.IconSize)
+                        )
                     }
-                }
+                } else null
             )
         }
         item {

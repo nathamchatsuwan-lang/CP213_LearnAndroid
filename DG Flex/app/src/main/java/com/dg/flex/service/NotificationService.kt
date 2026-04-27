@@ -171,7 +171,7 @@ class NotificationService @Inject constructor(
         )
 
         val notificationBuilder = NotificationCompat.Builder(context, CHANNEL_ID)
-            .setSmallIcon(R.mipmap.ic_launcher_foreground)
+            .setSmallIcon(R.drawable.logo)
             .setOngoing(true)
             .setRequestPromotedOngoing(true)
             .setSilent(true)  // TODO: maybe no silent when rest == 3,2,1
@@ -191,7 +191,7 @@ class NotificationService @Inject constructor(
 
         val notification = if (state.restTimeSecs != null && state.totalRest != null && state.restTimeSecs != 0L) {
             buildBaseNotification()
-                .setSmallIcon(R.mipmap.ic_launcher_foreground)
+                .setSmallIcon(R.drawable.logo)
                 .setContentText(
                     context.getString(
                         R.string.remaining_rest_notification_content,
@@ -219,7 +219,7 @@ class NotificationService @Inject constructor(
                 )
             }
             buildBaseNotification()
-                .setSmallIcon(R.mipmap.ic_launcher_foreground)
+                .setSmallIcon(R.drawable.logo)
                 .setContentText(contentText)
                 .setStyle(progressStyle)
                 .build()

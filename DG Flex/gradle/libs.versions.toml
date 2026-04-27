@@ -5,7 +5,7 @@ kotlinx_json = "1.10.0"
 material3 = "1.5.0-alpha15"  # handle material 3 seperately to get latest
 activity_compose = "1.13.0"  # back handler, etc.
 accompanist = "0.37.3"
-coil = "3.4.0"
+
 reorderable = "3.0.0"
 # material icons are now depracted
 legacy_material_icons = "1.7.8"
@@ -78,7 +78,7 @@ lifecycle-viewmodel-compose = { group = "androidx.lifecycle", name = "lifecycle-
 lifecycle-service = { group = "androidx.lifecycle", name = "lifecycle-service", version.ref = "lifecycle" }
 activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activity_compose" }
 core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core_ktx" }
-coil-compose = { group = "io.coil-kt.coil3", name = "coil-compose", version.ref = "coil" }
+
 palette-ktx = { group = "androidx.palette", name = "palette-ktx", version.ref = "palette" }
 gson = { group = "com.google.code.gson", name = "gson", version.ref = "gson" }
 datastore-preferences = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastore" }

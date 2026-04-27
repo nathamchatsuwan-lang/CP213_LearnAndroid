@@ -38,12 +38,9 @@ import com.dg.flex.ui.common.EmptyScreenInfo
 import com.dg.flex.ui.common.FullScreenImageCard
 import com.dg.flex.ui.common.HorizontalPagerIndicator
 import com.dg.flex.ui.common.InputOtherEquipmentDialog
-import com.dg.flex.ui.common.MediaViewModel
 import com.dg.flex.ui.common.RequestNotificationAccessDialog
 import com.dg.flex.ui.common.SharedElementKey
 import com.dg.flex.ui.common.SharedElementType
-import com.dg.flex.ui.common.SwipeableMediaPlaying
-import com.dg.flex.ui.common.SwipeableMediaPlayingDefaults
 import com.dg.flex.ui.screens.workout.components.EnterIntensityAndFinishDialog
 import com.dg.flex.ui.screens.workout.components.ExercisePages
 import com.dg.flex.ui.screens.workout.components.WorkoutBottomBar
@@ -106,13 +103,11 @@ fun SharedTransitionScope.Workout(
     previewExercise: ProgramExerciseAndInfo? = null, // preview of the first exercise, used for transition
     quickStart: Boolean = false,
     resumeWorkout: Boolean = false,
-    viewModel: WorkoutViewModel = hiltViewModel(),
-    mediaVM: MediaViewModel = hiltViewModel()
+    viewModel: WorkoutViewModel = hiltViewModel()
 ) {
     val workoutState by viewModel.workoutState.collectAsState()
     val pagesContent by viewModel.pagesContent.collectAsState()
     val currentExerciseState by viewModel.currentExerciseState.collectAsState()
-    val mediaState by mediaVM.state.collectAsStateWithLifecycle()
 
     LaunchedEffect(Unit) {
         // This should execute every time this screen is navigated to
@@ -322,8 +317,7 @@ fun SharedTransitionScope.Workout(
             Theme.DARK -> true
         }
     }}
-    var mediaControlsDismissed by rememberSaveable { mutableStateOf(false) }
-    val mediaSwipeState = rememberSwipeToDismissBoxState()
+
 
     // should only show preview when transitioning *into* the workout
     var containerTransitionFinished by rememberSaveable { mutableStateOf(false) }
@@ -343,8 +337,8 @@ fun SharedTransitionScope.Workout(
 
     if (pagesContent.exercises.isNotEmpty() || (currentExerciseState.isLoading && previewExercise != null)) {
         val currentImageId = if (pagerState.currentPage == pagesContent.exercises.size)
-            R.drawable.finish_workout
-        else currentExerciseState.currentExercise?.image  ?: R.drawable.finish_workout
+            0
+        else currentExerciseState.currentExercise?.image  ?: 0
         FullScreenImageCard(
             animatedVisibilityScope = animatedVisibilityScope,
             sharedState = sharedStateCard,
@@ -468,30 +462,7 @@ fun SharedTransitionScope.Workout(
             image = {},
             snackbarHost = { SnackbarHost(snackbarHostState) },
             cardShape = MaterialTheme.shapes.extraLarge as RoundedCornerShape,
-            floatingActionButton = {
-                if (!mediaState.needsAccess || mediaState.canAskAccess) {
-                    val visibleFabHeight = SwipeableMediaPlayingDefaults.totalHeight +
-                            16.dp // fab bottom padding
-                    fabHeight = if (mediaControlsDismissed) 0.dp else visibleFabHeight
-                    AnimatedVisibility(
-                        visible = containerTransitionFinished && !pagerState.isScrollInProgress && !mediaControlsDismissed,
-                        enter = fadeIn(MaterialTheme.motionScheme.defaultEffectsSpec()),
-                        exit = fadeOut(MaterialTheme.motionScheme.defaultEffectsSpec())
-                    ) {
-                        SwipeableMediaPlaying(
-                            onDismiss = { mediaControlsDismissed = true },
-                            mediaState = mediaState,
-                            swipeState = mediaSwipeState,
-                            togglePlayPause = { mediaVM.togglePlayPause() },
-                            playNext = { mediaVM.playNext() },
-                            modifier = Modifier.padding(start = 32.dp), // weird padding as it pretends to be a fab
-                            openPermissionDialog = {
-                                viewModel.onEvent(WorkoutEvent.ToggleRequestNotificationAccessDialog)
-                            }
-                        )
-                    }
-                }
-            },
+            floatingActionButton = {},
             imageHeight = imageHeight,
             brightImage = brightImage.value,
             darkTheme = useDarkTheme,
@@ -576,14 +547,8 @@ fun SharedTransitionScope.Workout(
                     }
                 },
                 removeExercise = { viewModel.onEvent(WorkoutEvent.RemoveExercise(it)) },
-                mediaControlsDismissed = !mediaState.canAskAccess || mediaControlsDismissed,
-                resetMediaControlVisibility = {
-                    scope.launch {
-                        mediaSwipeState.reset()
-                        mediaControlsDismissed = false
-                        mediaVM.resetCanRequestAccess()
-                    }
-                },
+                mediaControlsDismissed = true,
+                resetMediaControlVisibility = {},
                 dontRequestOngoingWorkoutNotification = {
                     viewModel.onEvent(
                         WorkoutEvent.DontRequestOngoingWorkoutNotification

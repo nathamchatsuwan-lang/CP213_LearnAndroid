@@ -218,8 +218,6 @@ fun SharedTransitionScope.ExercisePages(
                             ExerciseSettingsMenu(
                                 {},
                                 {}, {},
-                                {},
-                                false,
                                 {}
                             )
                         },
@@ -318,9 +316,7 @@ fun SharedTransitionScope.ExercisePages(
                                                 pagesContent.exercises[page].extExerciseId
                                             )
                                         )
-                                    },
-                                    mediaControlsDismissed = mediaControlsDismissed,
-                                    showMediaControls = resetMediaControlVisibility
+                                    }
                                 )
                             },
                             addSet = addSet,
@@ -862,9 +858,7 @@ fun ExerciseSettingsMenu(
     changeExercise: () -> Unit,
     removeExercise: () -> Unit,
     addExercise: () -> Unit,
-    viewStatistics: () -> Unit,
-    mediaControlsDismissed: Boolean,
-    showMediaControls: () -> Unit
+    viewStatistics: () -> Unit
 ) {
     Box(
         modifier = Modifier.wrapContentSize()
@@ -933,21 +927,6 @@ fun ExerciseSettingsMenu(
                     )
                 }
             )
-            if (mediaControlsDismissed) {
-                DropdownMenuItem(
-                    text = { Text(stringResource(R.string.show_media_controls)) },
-                    onClick = {
-                        expanded = false
-                        showMediaControls()
-                    },
-                    leadingIcon = {
-                        Icon(
-                            Icons.Outlined.PlayArrow,
-                            contentDescription = stringResource(R.string.show_media_controls)
-                        )
-                    }
-                )
-            }
         }
     }
 }

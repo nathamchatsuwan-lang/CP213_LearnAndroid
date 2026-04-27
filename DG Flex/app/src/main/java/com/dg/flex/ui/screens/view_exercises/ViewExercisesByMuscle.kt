@@ -1,10 +1,8 @@
 package com.dg.flex.ui.screens.view_exercises
 
 import androidx.compose.foundation.ExperimentalFoundationApi
-import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.automirrored.filled.ArrowBack
 import androidx.compose.material.icons.filled.Search
@@ -16,10 +14,8 @@ import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.clip
 import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.res.dimensionResource
-import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import com.dg.flex.R
@@ -190,16 +186,6 @@ fun SharedTransitionScope.ExercisesByMuscle(
                             }
                         ) {
                             Row (Modifier.padding(dimensionResource(R.dimen.card_inner_padding))){
-                                Image(
-                                    painter = painterResource(muscle.imageRes),
-                                    contentDescription = stringResource(R.string.image_highlighting_the_muscle),
-                                    modifier = Modifier
-                                        // Set image size to 40 dp
-                                        .size(80.dp)
-                                        // Clip image to be shaped as a circle
-                                        .clip(CircleShape)
-                                )
-
                                 Column(modifier = Modifier.align(Alignment.CenterVertically)) {
                                     Text(text = stringResource(muscle.muscleNameResource), fontWeight = FontWeight.Bold)
 //                                Spacer(modifier = Modifier.height(4.dp))

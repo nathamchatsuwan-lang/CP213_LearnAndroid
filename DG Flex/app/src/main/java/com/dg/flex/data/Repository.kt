@@ -67,6 +67,10 @@ class Repository @Inject constructor(
     private val db: WorkoutDatabase,
     @param:ApplicationContext  private val context: Context
 ) {
+    fun openWearWorkout() {
+        // Wear OS removed
+    }
+
     /*
      * WORKOUT PLAN
      */
@@ -266,7 +270,7 @@ class Repository @Inject constructor(
         else
             context.getString(exerciseAndInfo.descriptionResource)
         val image = if (exerciseAndInfo.userDefined)
-            R.drawable.finish_workout
+            0
         else
             exerciseAndInfo.imageResource
         val variation = if (exerciseAndInfo.variationResKey.isBlank())
@@ -315,7 +319,7 @@ class Repository @Inject constructor(
         else
             context.getString(workoutExercise.nameResource)
         val image = if (workoutExercise.userDefined)
-            R.drawable.finish_workout
+            0
         else
             workoutExercise.imageResource
         val variation = if (workoutExercise.variationResKey.isBlank())
@@ -440,7 +444,7 @@ class Repository @Inject constructor(
         else
             context.getString(exerciseRecord.nameResource)
         val image = if (exerciseRecord.userDefined)
-            R.drawable.finish_workout
+            0
         else
             exerciseRecord.imageResource
         val variation = if (exerciseRecord.variationResKey.isBlank())
@@ -551,7 +555,7 @@ class Repository @Inject constructor(
         else
             context.getString(exercise.descriptionResource)
         val image = if (exercise.userDefined)
-            R.drawable.finish_workout
+            0
         else
             exercise.imageResource
         val variations = if (exercise.userDefined)

@@ -67,8 +67,7 @@ android {
             isShrinkResources = false
 
             proguardFiles(
-                getDefaultProguardFile("proguard-android-optimize.txt"),
-                "proguard-rules.pro"
+                getDefaultProguardFile("proguard-android-optimize.txt")
             )
         }
         debug {
@@ -120,7 +119,7 @@ dependencies {
 
     implementation(libs.graphs)
     implementation(libs.palette.ktx)
-    implementation(libs.coil.compose)
+
 
     implementation(libs.gson)
     implementation(libs.datastore.preferences)

@@ -137,10 +137,10 @@ fun CustomizePlanGeneration(
 @OptIn(ExperimentalFoundationApi::class)
 fun LazyListScope.goalChoicePage(completeGoal: (WorkoutPlanGoal) -> Unit){
     val goalImages = mapOf(
-        WorkoutPlanGoal.HYPERTROPHY to R.drawable.cable_curl,
-        WorkoutPlanGoal.STRENGTH to R.drawable.headstand_push_up,
-        WorkoutPlanGoal.ENDURANCE to R.drawable.plank,
-        WorkoutPlanGoal.CARDIO to R.drawable.sit_ups
+        WorkoutPlanGoal.HYPERTROPHY to 0,
+        WorkoutPlanGoal.STRENGTH to 0,
+        WorkoutPlanGoal.ENDURANCE to 0,
+        WorkoutPlanGoal.CARDIO to 0
     )
     stickyHeader {
         Surface(
@@ -179,9 +179,9 @@ fun LazyListScope.goalChoicePage(completeGoal: (WorkoutPlanGoal) -> Unit){
 @OptIn(ExperimentalFoundationApi::class)
 fun LazyListScope.expertiseLevelPage(completeExpertise: (WorkoutPlanDifficulty) -> Unit) {
     val expertiseImages = mapOf(
-        WorkoutPlanDifficulty.BEGINNER to R.drawable.chest_press,
-        WorkoutPlanDifficulty.INTERMEDIATE to R.drawable.deadlift,
-        WorkoutPlanDifficulty.ADVANCED to R.drawable.muscle_up
+        WorkoutPlanDifficulty.BEGINNER to 0,
+        WorkoutPlanDifficulty.INTERMEDIATE to 0,
+        WorkoutPlanDifficulty.ADVANCED to 0
     )
     stickyHeader {
         Surface(
@@ -221,10 +221,10 @@ fun LazyListScope.expertiseLevelPage(completeExpertise: (WorkoutPlanDifficulty) 
 @OptIn(ExperimentalFoundationApi::class)
 fun LazyListScope.workoutSplitPage(completeSplit: (WorkoutPlanSplit) -> Unit) {
     val workoutImages = mapOf(
-        WorkoutPlanSplit.BRO to R.drawable.bench_press,
-        WorkoutPlanSplit.GAINZ to R.drawable.generic_barbell,
-        WorkoutPlanSplit.FULL_BODY to R.drawable.generic_machine,
-        WorkoutPlanSplit.UPPER_LOWER to R.drawable.chest_dip,
+        WorkoutPlanSplit.BRO to 0,
+        WorkoutPlanSplit.GAINZ to 0,
+        WorkoutPlanSplit.FULL_BODY to 0,
+        WorkoutPlanSplit.UPPER_LOWER to 0,
     )
 
     stickyHeader {

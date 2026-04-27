@@ -196,7 +196,7 @@
     <string name="source_code_title">Source code</string>
     <string name="source_code_info">The entirety of this app is open source. Feel free to contribute or just look around.</string>
     <string name="acknowledgements_title">Acknowledgements</string>
-    <string name="acknowledgements">This is made for be inspiration for dg-flex web base app which use firebase for web base app but still learn how to use with kotlin and struggle with my laptop it is too bad to study android application because its too slow and have low ram to run visual mobile</string>
+    <string name="acknowledgements">This is made for be inspiration for dgflex web base app which use firebase for web base app but still learn how to use with kotlin and struggle with my laptop it is too bad to study android application because its too slow and have low ram to run visual mobile</string>
     <string name="salute_user">Hi, %1$s</string>
     <string name="name">Name</string>
     <string name="age">Age</string>
