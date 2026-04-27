@@ -58,7 +58,7 @@ import com.patrykandpatrick.vico.compose.cartesian.axis.HorizontalAxis
 import com.patrykandpatrick.vico.compose.cartesian.axis.VerticalAxis
 import com.patrykandpatrick.vico.compose.cartesian.data.CartesianValueFormatter
 import com.patrykandpatrick.vico.compose.common.LegendItem
-import com.dg.flex.data.HealthConnectRepository
+
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.lazy.rememberLazyListState
@@ -66,7 +66,7 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.text.TextStyle
-import androidx.health.connect.client.PermissionController
+
 import com.patrykandpatrick.vico.compose.cartesian.axis.HorizontalAxis.ItemPlacer
 import com.patrykandpatrick.vico.compose.cartesian.decoration.HorizontalBox
 import com.patrykandpatrick.vico.compose.cartesian.layer.rememberLine
@@ -596,92 +596,6 @@ fun WorkoutRecap(
                                                 state.workoutRecord!!.activeTimeSeconds
                                             )
                                 )
-                            }
-                        }
-                    }
-                }
-                // Health Connect export card
-                if (state.isHealthConnectAvailable && state.workoutRecord != null) {
-                    item {
-                        val healthConnectPermissionsLauncher = rememberLauncherForActivityResult(
-                            PermissionController.createRequestPermissionResultContract()
-                        ) {
-                            viewModel.onEvent(RecapEvent.RefreshHealthConnectPermissions)
-                        }
-                        Card(
-                            modifier = Modifier
-                                .padding(horizontal = dimensionResource(R.dimen.card_outside_padding))
-                                .padding(top = 16.dp)
-                                .fillMaxWidth()
-                        ) {
-                            Row(
-                                modifier = Modifier
-                                    .padding(16.dp)
-                                    .fillMaxWidth(),
-                                verticalAlignment = Alignment.CenterVertically,
-                                horizontalArrangement = Arrangement.SpaceBetween
-                            ) {
-                                Icon(
-                                    painterResource(R.drawable.ic_health_connect_logo),
-                                    contentDescription = null,
-                                    modifier = Modifier
-                                        .size(64.dp)
-                                        .padding(end = 8.dp),
-                                    tint = Color.Unspecified
-                                )
-                                Column(modifier = Modifier.weight(1f)) {
-                                    Text(
-                                        stringResource(R.string.health_connect_title),
-                                        style = MaterialTheme.typography.titleSmall
-                                    )
-                                    Text(
-                                        when (state.healthConnectExportStatus) {
-                                            HealthConnectExportStatus.EXPORTED ->
-                                                stringResource(R.string.health_connect_exported)
-                                            HealthConnectExportStatus.ERROR ->
-                                                stringResource(R.string.health_connect_export_error)
-                                            else -> stringResource(R.string.health_connect_export_prompt)
-                                        },
-                                        style = MaterialTheme.typography.bodySmall,
-                                        color = MaterialTheme.colorScheme.onSurfaceVariant
-                                    )
-                                }
-                                when (state.healthConnectExportStatus) {
-                                    HealthConnectExportStatus.EXPORTING -> {
-                                        CircularProgressIndicator(modifier = Modifier.size(24.dp))
-                                    }
-                                    HealthConnectExportStatus.EXPORTED -> {
-                                        Icon(
-                                            Icons.Default.CheckCircle,
-                                            contentDescription = null,
-                                            tint = MaterialTheme.colorScheme.primary
-                                        )
-                                    }
-                                    HealthConnectExportStatus.ERROR -> {
-                                        TextButton(onClick = {
-                                            viewModel.onEvent(RecapEvent.ExportToHealthConnect)
-                                        }) {
-                                            Text(stringResource(R.string.health_connect_retry))
-                                        }
-                                    }
-                                    HealthConnectExportStatus.NOT_EXPORTED -> {
-                                        if (state.hasHealthConnectPermissions) {
-                                            TextButton(onClick = {
-                                                viewModel.onEvent(RecapEvent.ExportToHealthConnect)
-                                            }) {
-                                                Text(stringResource(R.string.health_connect_export))
-                                            }
-                                        } else {
-                                            TextButton(onClick = {
-                                                healthConnectPermissionsLauncher.launch(
-                                                    HealthConnectRepository.REQUIRED_PERMISSIONS
-                                                )
-                                            }) {
-                                                Text(stringResource(R.string.health_connect_connect_and_export))
-                                            }
-                                        }
-                                    }
-                                }
                             }
                         }
                     }

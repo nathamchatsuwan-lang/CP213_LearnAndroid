@@ -1,6 +1,6 @@
 package com.dg.flex.ui.screens.workout_recap
 
-import com.dg.flex.data.HealthConnectRepository
+
 import com.dg.flex.data.PreferenceRepository
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
@@ -27,9 +27,7 @@ import kotlinx.coroutines.launch
 import java.time.ZonedDateTime
 import javax.inject.Inject
 
-enum class HealthConnectExportStatus {
-    NOT_EXPORTED, EXPORTING, EXPORTED, ERROR
-}
+
 
 data class RecapState(
     val workoutId: Long = 0L,
@@ -45,23 +43,17 @@ data class RecapState(
     val minHR: Double = 0.0,
     val hrChartProducer: CartesianChartModelProducer = CartesianChartModelProducer(),
     val imperialSystem: Boolean = false,
-    val index2date: Map<Int, ZonedDateTime> = emptyMap(),
-    val isHealthConnectAvailable: Boolean = false,
-    val hasHealthConnectPermissions: Boolean = false,
-    val healthConnectExportStatus: HealthConnectExportStatus = HealthConnectExportStatus.NOT_EXPORTED,
+    val index2date: Map<Int, ZonedDateTime> = emptyMap()
 )
 
 sealed class RecapEvent{
     data class SetWorkoutId(val workoutId: Long): RecapEvent()
-    data object ExportToHealthConnect : RecapEvent()
-    data object RefreshHealthConnectPermissions : RecapEvent()
 }
 
 @HiltViewModel
 class RecapViewModel @Inject constructor(
     private val repository: Repository,
-    private val preferences: PreferenceRepository,
-    private val healthConnectRepository: HealthConnectRepository
+    private val preferences: PreferenceRepository
 ): ViewModel() {
     private val _state = MutableStateFlow(RecapState())
     val state: StateFlow<RecapState> = _state.asStateFlow()
@@ -76,27 +68,7 @@ class RecapViewModel @Inject constructor(
                 _state.update { it.copy(imperialSystem = imperialSystem) }
             }
         }
-        viewModelScope.launch {
-            _state.update {
-                it.copy(
-                    isHealthConnectAvailable = healthConnectRepository.isAvailable,
-                    hasHealthConnectPermissions = healthConnectRepository.hasAllPermissions()
-                )
-            }
-        }
-        viewModelScope.launch {
-            combine(
-                state.map { it.workoutRecord }.distinctUntilChanged(),
-                state.map { it.hasHealthConnectPermissions }.distinctUntilChanged(),
-                state.map { it.programName }.distinctUntilChanged()
-            ) { record, hasPermissions, programName ->
-                tryExportToHealthConnect(
-                    record,
-                    hasPermissions,
-                    programName
-                )
-            }.collect()
-        }
+
     }
 
     fun onEvent(event: RecapEvent){
@@ -228,48 +200,9 @@ class RecapViewModel @Inject constructor(
                     }
                 }
             }
-            is RecapEvent.ExportToHealthConnect -> {
-                tryExportToHealthConnect(
-                    state.value.workoutRecord,
-                    state.value.hasHealthConnectPermissions,
-                    state.value.programName
-                )
-            }
-            is RecapEvent.RefreshHealthConnectPermissions -> {
-                viewModelScope.launch {
-                    _state.update {
-                        it.copy(hasHealthConnectPermissions = healthConnectRepository.hasAllPermissions())
-                    }
-                }
-            }
+
         }
     }
 
-    private fun tryExportToHealthConnect(record: WorkoutRecord?, hasPermissions: Boolean, programName: String) {
-        viewModelScope.launch {
-            if (record == null) return@launch
-            if (!hasPermissions) return@launch
-            if (record.healthRecordId != null) {
-                _state.update { it.copy(healthConnectExportStatus = HealthConnectExportStatus.EXPORTED) }
-                return@launch
-            }
-            if (programName.isEmpty()) return@launch
-            _state.update { it.copy(healthConnectExportStatus = HealthConnectExportStatus.EXPORTING) }
-            val healthRecordId = healthConnectRepository.writeWorkout(record, programName)
-            _state.update {
-                it.copy(
-                    healthConnectExportStatus = if (healthRecordId != null)
-                        HealthConnectExportStatus.EXPORTED
-                    else
-                        HealthConnectExportStatus.ERROR
-                )
-            }
-            if (healthRecordId != null) {
-                repository.updateWorkoutRecordHealthId(
-                    record.workoutId,
-                    healthRecordId
-                )
-            }
-        }
-    }
+
 }

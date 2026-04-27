@@ -29,10 +29,9 @@ import com.dg.flex.ui.common.InfoDialog
 import com.dg.flex.utils.getLangPreferenceDropdownEntries
 import com.dg.flex.utils.plus
 import android.os.Build
-import com.dg.flex.data.HealthConnectRepository
 import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.health.connect.client.PermissionController
+
 import androidx.compose.foundation.background
 import com.dg.flex.shared.maybeKgToLb
 import com.dg.flex.shared.maybeLbToKg

@@ -31,7 +31,7 @@ private val BlackRedColorScheme = darkColorScheme(
 )
 
 @Composable
-fun ElevateFitnessTheme(
+fun DGFlexTheme(
     darkTheme: Boolean = true,
     // Dynamic color is available on Android 12+
     dynamicColor: Boolean = false,

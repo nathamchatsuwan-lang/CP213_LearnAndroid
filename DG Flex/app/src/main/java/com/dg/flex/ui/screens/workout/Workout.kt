@@ -92,8 +92,8 @@ import kotlinx.coroutines.launch
     start = true,
     style = FadeTransition::class,
     deepLinks = [
-        DeepLink(uriPattern="elevatefitness://autoopenworkout"),
-        DeepLink(uriPattern="elevatefitness://workout/{programId}"),
+        DeepLink(uriPattern="dgflex://autoopenworkout"),
+        DeepLink(uriPattern="dgflex://workout/{programId}"),
     ]
 )
 @OptIn(

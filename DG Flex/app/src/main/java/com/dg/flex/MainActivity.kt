@@ -1,7 +1,7 @@
 package com.dg.flex
 
 import com.dg.flex.data.PreferenceRepository
-import com.dg.flex.ui.theme.ElevateFitnessTheme
+import com.dg.flex.ui.theme.DGFlexTheme
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -70,7 +70,7 @@ class MainActivity : ComponentActivity() {
             val engine = rememberNavHostEngine()
             val navController = engine.rememberNavController()
 
-            ElevateFitnessTheme (darkTheme = darkTheme) {
+            DGFlexTheme (darkTheme = darkTheme) {
                 ProvideVicoTheme(rememberM3VicoTheme()) {
                     DestinationsNavHost(
                         navGraph = NavGraphs.root,

@@ -5,11 +5,7 @@
     <!--Permission for posting notifications-->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
 
-    <!-- Health Connect permissions -->
-    <uses-permission android:name="android.permission.health.WRITE_EXERCISE"/>
-    <uses-permission android:name="android.permission.health.WRITE_ACTIVE_CALORIES_BURNED"/>
-    <uses-permission android:name="android.permission.health.READ_WEIGHT"/>
-    <uses-permission android:name="android.permission.health.WRITE_WEIGHT"/>
+
     <!--Permission for live update eligibility-->
     <uses-permission android:name="android.permission.POST_PROMOTED_NOTIFICATIONS" />
 
@@ -17,10 +13,7 @@
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
 
-    <!-- Required for Health Connect package visibility on Android 11+ -->
-    <queries>
-        <package android:name="com.google.android.apps.healthdata" />
-    </queries>
+
 
     <application
         android:enableOnBackInvokedCallback="true"
@@ -52,22 +45,13 @@
             android:exported="false"
             android:foregroundServiceType="dataSync">
         </service>
-        <!-- Required by Health Connect to show permission usage to users -->
-        <activity
-            android:name=".PrivacyPolicyActivity"
-            android:exported="true"
-            android:permission="android.permission.START_VIEW_PERMISSION_USAGE">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW_PERMISSION_USAGE" />
-                <category android:name="android.intent.category.HEALTH_PERMISSIONS" />
-            </intent-filter>
-        </activity>
+
 
         <activity
             android:name=".MainActivity"
             android:launchMode="standard"
             android:exported="true"
-            android:theme="@style/Theme.ElevateFitness">
+            android:theme="@style/Theme.DGFlex">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -78,7 +62,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data
-                    android:scheme="elevatefitness"
+                    android:scheme="dgflex"
                     android:host="autoopenworkout" />
             </intent-filter>
             <intent-filter>
@@ -86,7 +70,7 @@
                 <category android:name="android.intent.category.DEFAULT" />
                 <category android:name="android.intent.category.BROWSABLE" />
                 <data
-                    android:scheme="elevatefitness"
+                    android:scheme="dgflex"
                     android:host="workout" />
             </intent-filter>
         </activity>

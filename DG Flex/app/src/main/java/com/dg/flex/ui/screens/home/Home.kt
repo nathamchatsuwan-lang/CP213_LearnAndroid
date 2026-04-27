@@ -103,7 +103,7 @@ fun SharedTransitionScope.Home(
                 .setShortLabel(getProgramDisplayName(it.name, context))
 //                .setLongLabel(context.getString(R.string.shortcut_start_workout_long))
                 .setIcon(IconCompat.createWithResource(context, R.drawable.weight_icon))
-                .setIntent(Intent(Intent.ACTION_VIEW, "elevatefitness://workout/${it.programId}".toUri()).apply {
+                .setIntent(Intent(Intent.ACTION_VIEW, "dgflex://workout/${it.programId}".toUri()).apply {
                     setPackage(context.packageName)
                     addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
                 })
@@ -120,7 +120,7 @@ fun SharedTransitionScope.Home(
                         .setIntent(
                             Intent(
                                 Intent.ACTION_VIEW,
-                                "elevatefitness://workout/${program.programId}".toUri()
+                                "dgflex://workout/${program.programId}".toUri()
                             ).apply {
                                 setPackage(context.packageName)
                                 addFlags(Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TOP)
