@@ -1,5 +1,5 @@
 package com.dg.flex.shared
-
+import com.dg.flex.R
 
 enum class Equipment(val equipmentResKey: String){
     EVERYTHING("equipments_see_all"), // Used when filtering by muscle to get everything

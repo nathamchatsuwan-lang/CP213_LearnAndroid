@@ -1,15 +1,13 @@
 package com.dg.flex.shared
-
+import com.dg.flex.R
 import androidx.compose.ui.res.stringResource
 import kotlin.math.round
 import androidx.compose.runtime.Composable
-import com.google.protobuf.Timestamp
 import java.time.Instant
 import java.time.ZoneId
 import java.time.ZonedDateTime
 
 const val decimalPlaces = 100  // 2 decimal places
-
 
 fun maybeKgToLb(kg: Float, useImperial: Boolean): Float {
     if (!useImperial)
@@ -22,7 +20,6 @@ fun maybeKgToLb(kg: Double, useImperial: Boolean): Double {
         return round(kg * decimalPlaces) / decimalPlaces
     return round(kg * 2.20462f * decimalPlaces) / decimalPlaces
 }
-
 
 fun maybeLbToKg(weight: Float, useImperial: Boolean): Float {
     if (!useImperial)
@@ -57,7 +54,6 @@ fun barbellIndexFromWeight(
     return index
 }
 
-
 @Composable
 fun weightAndUnit(
     weight: Float,  // weight in kg
@@ -72,35 +68,10 @@ fun weightAndUnit(
         "$displayWeight $unit"
 }
 
-fun ZonedDateTime?.toProtoTimestamp(): Timestamp {
-    val millis = this?.toInstant()?.toEpochMilli()
-    return if (millis != null)
-        Timestamp.newBuilder()
-            .setSeconds(millis / 1000)
-            .setNanos((millis % 1000).toInt() * 1000000)
-            .build()
-    else
-        Timestamp.newBuilder()
-            .setSeconds(0L)
-            .setNanos(0)
-            .build()
-}
-
-fun Timestamp.toZonedDateTime(): ZonedDateTime? {
-    if (this.seconds == 0L && this.nanos == 0)
-        return null
-    val millis = this.seconds * 1000 + this.nanos / 1000000
-    return ZonedDateTime.ofInstant(
-        Instant.ofEpochMilli(millis),
-        ZoneId.systemDefault()
-    )
-}
-
 data class PlateChange(
     val add: Map<Float, Int>,
     val remove: Map<Float, Int>
 )
-
 
 fun getPlates(weight: Float): Map<Float, Int> {
     // Standard barbell plates in kg (or lbs)
@@ -145,4 +116,3 @@ fun calculatePlateChange(oldWeight: Float, newWeight: Float): PlateChange {
 
     return PlateChange(add, remove)
 }
-

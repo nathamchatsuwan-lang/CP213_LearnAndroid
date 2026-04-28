@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DG Flex - Statistics</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="screen">
+        <div class="app-bar">
+            <h1>PERFORMANCE</h1>
+            <i class="fa-solid fa-share-nodes"></i>
+        </div>
+
+        <div class="content">
+            <div class="row" style="gap: var(--spacing-sm); margin-bottom: var(--spacing-lg);">
+                <div class="btn btn-primary" style="padding: 8px 16px; font-size: 12px;">Overview</div>
+                <div class="btn btn-outline" style="padding: 8px 16px; font-size: 12px;">Volume</div>
+                <div class="btn btn-outline" style="padding: 8px 16px; font-size: 12px;">1RM</div>
+            </div>
+
+            <div class="card glass">
+                <p class="stats-label">Volume Progress</p>
+                <div style="height: 150px; display: flex; align-items: flex-end; gap: 10px; padding: 20px 0;">
+                    <div style="flex: 1; background: var(--glass-border); height: 40%; border-radius: 4px;"></div>
+                    <div style="flex: 1; background: var(--glass-border); height: 60%; border-radius: 4px;"></div>
+                    <div style="flex: 1; background: var(--glass-border); height: 55%; border-radius: 4px;"></div>
+                    <div style="flex: 1; background: var(--glass-border); height: 80%; border-radius: 4px;"></div>
+                    <div style="flex: 1; background: var(--accent-color); height: 95%; border-radius: 4px; box-shadow: 0 0 15px rgba(255,0,51,0.3);"></div>
+                </div>
+                <div class="row" style="justify-content: space-between; font-size: 10px; color: var(--text-secondary);">
+                    <span>MON</span><span>TUE</span><span>WED</span><span>THU</span><span>FRI</span>
+                </div>
+            </div>
+
+            <h3 style="margin: var(--spacing-lg) 0 var(--spacing-md) 0;">Muscle Split</h3>
+            <div class="card">
+                <div class="row" style="margin-bottom: 15px;">
+                    <div style="width: 10px; height: 10px; background: var(--accent-color); border-radius: 2px;"></div>
+                    <span style="font-size: 12px; flex: 1;">Chest</span>
+                    <span style="font-size: 12px; font-weight: 800;">42%</span>
+                </div>
+                <div class="row" style="margin-bottom: 15px;">
+                    <div style="width: 10px; height: 10px; background: #3366FF; border-radius: 2px;"></div>
+                    <span style="font-size: 12px; flex: 1;">Back</span>
+                    <span style="font-size: 12px; font-weight: 800;">28%</span>
+                </div>
+                <div class="row" style="margin-bottom: 15px;">
+                    <div style="width: 10px; height: 10px; background: #FFCC00; border-radius: 2px;"></div>
+                    <span style="font-size: 12px; flex: 1;">Legs</span>
+                    <span style="font-size: 12px; font-weight: 800;">30%</span>
+                </div>
+            </div>
+
+            <div class="card glass">
+                <div class="row" style="justify-content: space-between;">
+                    <div>
+                        <p class="stats-label">Total Workouts</p>
+                        <p class="stats-value" style="font-size: 40px; margin: 0;">124</p>
+                    </div>
+                    <i class="fa-solid fa-trophy" style="font-size: 48px; color: var(--accent-color); opacity: 0.3;"></i>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-bar">
+            <a href="home.html" class="bottom-bar-item">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+            <a href="history.html" class="bottom-bar-item">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>History</span>
+            </a>
+            <a href="workout.html" class="bottom-bar-item">
+                <div style="background: var(--accent-color); width: 40px; height: 40px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-top: -20px; box-shadow: 0 4px 10px rgba(255,0,51,0.4);">
+                    <i class="fa-solid fa-plus" style="color: white; font-size: 20px;"></i>
+                </div>
+            </a>
+            <a href="statistics.html" class="bottom-bar-item active">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Stats</span>
+            </a>
+            <a href="profile.html" class="bottom-bar-item">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>

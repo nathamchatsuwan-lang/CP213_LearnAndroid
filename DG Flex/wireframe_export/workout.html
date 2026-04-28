@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DG Flex - Workout</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="screen">
+        <div class="app-bar">
+            <div class="row">
+                <i class="fa-solid fa-xmark"></i>
+                <div style="width: 15px;"></div>
+                <h1>PUSH DAY</h1>
+            </div>
+            <div class="badge" style="background: var(--surface-light);">00:42:15</div>
+        </div>
+
+        <div class="content">
+            <div class="card glass">
+                <div class="row" style="justify-content: space-between; margin-bottom: var(--spacing-md);">
+                    <h3 style="margin: 0; color: var(--accent-color);">1. Barbell Bench Press</h3>
+                    <i class="fa-solid fa-ellipsis"></i>
+                </div>
+                
+                <table style="width: 100%; border-collapse: collapse; text-align: left;">
+                    <thead>
+                        <tr style="color: var(--text-secondary); font-size: 10px; text-transform: uppercase;">
+                            <th style="padding-bottom: 10px;">Set</th>
+                            <th style="padding-bottom: 10px;">Previous</th>
+                            <th style="padding-bottom: 10px;">Weight (kg)</th>
+                            <th style="padding-bottom: 10px;">Reps</th>
+                            <th style="padding-bottom: 10px; text-align: center;">Done</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr style="border-bottom: 1px solid var(--glass-border);">
+                            <td style="padding: 12px 0;">1</td>
+                            <td style="padding: 12px 0; color: var(--text-secondary);">80 x 10</td>
+                            <td style="padding: 12px 0;"><input type="text" value="85" style="background: var(--surface-light); border: none; color: white; width: 40px; padding: 5px; border-radius: 4px; text-align: center;"></td>
+                            <td style="padding: 12px 0;"><input type="text" value="8" style="background: var(--surface-light); border: none; color: white; width: 40px; padding: 5px; border-radius: 4px; text-align: center;"></td>
+                            <td style="padding: 12px 0; text-align: center;"><i class="fa-solid fa-check" style="color: var(--accent-color);"></i></td>
+                        </tr>
+                        <tr style="border-bottom: 1px solid var(--glass-border);">
+                            <td style="padding: 12px 0;">2</td>
+                            <td style="padding: 12px 0; color: var(--text-secondary);">80 x 10</td>
+                            <td style="padding: 12px 0;"><input type="text" value="85" style="background: var(--surface-light); border: none; color: white; width: 40px; padding: 5px; border-radius: 4px; text-align: center;"></td>
+                            <td style="padding: 12px 0;"><input type="text" value="8" style="background: var(--surface-light); border: none; color: white; width: 40px; padding: 5px; border-radius: 4px; text-align: center;"></td>
+                            <td style="padding: 12px 0; text-align: center;"><i class="fa-regular fa-square" style="color: var(--glass-border);"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <div style="height: 15px;"></div>
+                <div class="btn btn-outline" style="width: 100%; font-size: 12px;">+ Add Set</div>
+            </div>
+
+            <div class="card" style="opacity: 0.6;">
+                <h3 style="margin: 0 0 10px 0;">2. Incline Dumbbell Fly</h3>
+                <p class="text-subtitle">3 Sets • 12 Reps</p>
+            </div>
+
+            <div class="btn btn-primary" style="width: 100%; margin-top: var(--spacing-xl); padding: 16px;">FINISH WORKOUT</div>
+        </div>
+    </div>
+</body>
+</html>

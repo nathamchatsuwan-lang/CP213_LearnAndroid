@@ -196,7 +196,7 @@
     <string name="source_code_title">Source code</string>
     <string name="source_code_info">The entirety of this app is open source. Feel free to contribute or just look around.</string>
     <string name="acknowledgements_title">Acknowledgements</string>
-    <string name="acknowledgements">This is made for be inspiration for dgflex web base app which use firebase for web base app but still learn how to use with kotlin and struggle with my laptop it is too bad to study android application because its too slow and have low ram to run visual mobile</string>
+    <string name="acknowledgements">This is made for be inspiration for dg-flex web base app which use firebase for web base app but still learn how to use with kotlin and struggle with my laptop it is too bad to study android application because its too slow and have low ram to run visual mobile</string>
     <string name="salute_user">Hi, %1$s</string>
     <string name="name">Name</string>
     <string name="age">Age</string>
@@ -843,6 +843,7 @@
     <string name="add_set_fail">Tried to add a set but current exercise is unknown!</string>
     <string name="resume_workout_fail">Couldn\'t find the workout to resume.</string>
     <string name="lock_workout_scroll">Lock workout horizontal scroll: </string>
+    <string name="auto_open_wearos">Automatically open Wear OS companion on workout start: </string>
     <string name="show_media_controls">Show media controls</string>
     <string name="discard_data_dialog_title">Discard changed data?</string>
     <string name="discard_data_dialog_info">You have changed some options for this exercise. If you go back now you will lose these changes.</string>
@@ -892,4 +893,17 @@
     <string name="health_connect_retry">Retry</string>
     <string name="heart_rate_bpm">Heart rate (bpm)</string>
     <string name="progression_over_time">Progression over time</string>
+    <string name="barbells_light_ez_curl_bar">Light EZ curl bar</string>
+    <string name="barbells_ez_curl_bar">EZ curl bar</string>
+    <string name="barbells_young_s_olympic_bar">Young\'s olympic bar</string>
+    <string name="barbells_women_s_olympic_bar">Women\'s olympic bar</string>
+    <string name="barbells_men_s_olympic_bar">Men\'s olympic bar</string>
+    <string name="barbells_squat_bar">Squat bar</string>
+    <string name="barbells_other">Other</string>
+    <string name="equipments_see_all">See all</string>
+    <string name="equipments_barbell">Barbell</string>
+    <string name="equipments_body_weight">Body weight</string>
+    <string name="equipments_cables">Cables</string>
+    <string name="equipments_dumbbell">Dumbbell</string>
+    <string name="equipments_machine">Machine</string>
 </resources>

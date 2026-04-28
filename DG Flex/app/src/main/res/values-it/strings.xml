@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">DG Flex</string>
+    <string name="app_name" translatable="false">ElevateFitness</string>
     <string name="home">Home</string>
     <string name="history">Storico</string>
     <string name="statistics">Statistiche</string>
@@ -830,6 +830,7 @@
     <string name="add_set_fail">Non è stato possibile aggiungere una serie perché l\'esercizio è sconosciuto!</string>
     <string name="resume_workout_fail">Non è stato possibile trovare l\'allenamento da riprendere!</string>
     <string name="lock_workout_scroll">Blocca scroll orizzontale nell\'allenamento: </string>
+    <string name="auto_open_wearos">Apri automaticamente l\'app Wear OS all\'inizio dell\'allenamento</string>
     <string name="show_media_controls">Mostra controlli multimediali</string>
     <string name="discard_data_dialog_title">Annullare cambiamenti?</string>
     <string name="discard_data_dialog_info">Hai cambiato qualche valore per questo esercizio. Se torni indietro adesso, annullerai questi cambiamenti.</string>
@@ -880,4 +881,17 @@
     <string name="health_connect_retry">Riprova</string>
     <string name="heart_rate_bpm">Battiti (bpm)</string>
     <string name="progression_over_time">Progressione nel tempo</string>
+    <string name="barbells_light_ez_curl_bar">Bilanciere sagomato leggero</string>
+    <string name="barbells_ez_curl_bar">Bilanciere sagomato</string>
+    <string name="barbells_young_s_olympic_bar">Bilanciere olimpico per bambini</string>
+    <string name="barbells_women_s_olympic_bar">Bilanciere olimpico da donna</string>
+    <string name="barbells_men_s_olympic_bar">Bilanciere olimpico da uomo</string>
+    <string name="barbells_squat_bar">Bilanciere da squat</string>
+    <string name="barbells_other">Altro</string>
+    <string name="equipments_see_all">Vedi tutti</string>
+    <string name="equipments_barbell">Bilanciere</string>
+    <string name="equipments_body_weight">A corpo libero</string>
+    <string name="equipments_cables">Cavi</string>
+    <string name="equipments_dumbbell">Manubri</string>
+    <string name="equipments_machine">Macchinario</string>
 </resources>

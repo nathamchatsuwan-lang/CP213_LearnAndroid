@@ -1,4 +1,5 @@
 package com.dg.flex.shared
+import com.dg.flex.R
 
 enum class BarbellType(val barbellResKey: String, val weight: Map<Boolean, Float>){
     // name, weight[false] = kg, true = lbs

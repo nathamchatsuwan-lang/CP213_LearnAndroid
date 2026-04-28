@@ -25,8 +25,7 @@ import androidx.lifecycle.viewModelScope
 import com.dg.flex.shared.Equipment
 import com.dg.flex.shared.maybeKgToLb
 import com.dg.flex.shared.maybeLbToKg
-import com.dg.flex.shared.toZonedDateTime
-import com.google.protobuf.Empty
+
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.channels.Channel

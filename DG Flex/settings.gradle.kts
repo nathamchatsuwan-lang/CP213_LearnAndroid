@@ -18,4 +18,3 @@ dependencyResolutionManagement {
 
 rootProject.name = "DGFlex"
 include(":app")
-include(":shared")

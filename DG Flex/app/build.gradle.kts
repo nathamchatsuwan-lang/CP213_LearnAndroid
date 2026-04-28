@@ -108,7 +108,6 @@ dependencies {
 
     implementation(libs.vico.compose)
     implementation(libs.vico.compose.m3)
-    implementation(project(":shared"))
     implementation(platform(libs.compose.bom))
     implementation(libs.compose.destinations.core)
     implementation(libs.compose.destinations.bottom.sheet)

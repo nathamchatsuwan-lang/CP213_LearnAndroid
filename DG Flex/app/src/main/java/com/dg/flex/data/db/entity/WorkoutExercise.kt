@@ -8,7 +8,6 @@ import androidx.room.ForeignKey
 import androidx.room.ForeignKey.Companion.CASCADE
 import androidx.room.Index
 import com.dg.flex.shared.Equipment
-import com.dg.flex.shared.grpc.Workout
 import kotlinx.parcelize.Parcelize
 
 @Parcelize
@@ -81,22 +80,6 @@ data class WorkoutExercise (
         get() = getVariation(variationResKey)
     val imageResource: Int
         get() = getImageResource(imageResKey)
-
-    fun toProto(): Workout.Exercise {
-        return Workout.Exercise.newBuilder()
-            .setWorkoutExerciseId(this.workoutExerciseId)
-            .setProgramExerciseId(this.extProgramExerciseId ?: 0L)
-            .setName(this.name)
-            .setEquipment(this.equipment.equipmentResKey)
-            .setOrderInProgram(this.orderInProgram)
-            .addAllReps(this.reps)
-            .addAllRest(this.rest)
-            .setNote(this.note)
-            .setVariation(this.variation)
-            .setSupersetExercise(this.supersetExercise ?: 0L)
-            .setIsDurationBased(this.overriddenDurationBased)
-            .build()
-    }
 }
 
 @Parcelize

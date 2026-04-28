@@ -1,7 +1,6 @@
 package com.dg.flex.data.db.entity
 
 import com.dg.flex.R
-import com.dg.flex.shared.grpc.Workout
 import android.os.Parcelable
 import androidx.room.ColumnInfo
 import androidx.room.Entity
@@ -91,13 +90,6 @@ data class WorkoutRecord(
         EXERCISE_SKIPPED,
         EXERCISE_REPLACED;
 
-        fun toProto(): Workout.ProtoModificationType {
-            return when (this) {
-                EXERCISE_ADDED -> Workout.ProtoModificationType.EXERCISE_ADDED
-                EXERCISE_SKIPPED -> Workout.ProtoModificationType.EXERCISE_SKIPPED
-                EXERCISE_REPLACED -> Workout.ProtoModificationType.EXERCISE_REPLACED
-            }
-        }
     }
 
 }

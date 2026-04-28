@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Wireframe Export - DG Flex</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #080808;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 50px 20px;
+            margin: 0;
+        }
+        h1 { 
+            font-size: 48px;
+            font-weight: 800;
+            letter-spacing: -2px;
+            margin-bottom: 10px;
+            background: linear-gradient(to right, #FF0033, #FF6600);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        p { color: #A0A0A0; margin-bottom: 50px; text-align: center; max-width: 600px; }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            width: 100%;
+            max-width: 1000px;
+        }
+        .card {
+            background: #121212;
+            padding: 32px;
+            border-radius: 24px;
+            text-align: left;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: #FF0033;
+            box-shadow: 0 20px 40px rgba(255, 0, 51, 0.1);
+        }
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(45deg, transparent, rgba(255, 0, 51, 0.05));
+            opacity: 0;
+            transition: 0.3s;
+        }
+        .card:hover::before { opacity: 1; }
+        .card h3 { 
+            margin: 0 0 12px 0; 
+            font-size: 24px; 
+            font-weight: 800;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        .card p { 
+            font-size: 14px; 
+            color: #A0A0A0; 
+            margin: 0; 
+            text-align: left;
+        }
+        .icon {
+            width: 48px;
+            height: 48px;
+            background: rgba(255, 0, 51, 0.1);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 24px;
+            color: #FF0033;
+            font-size: 24px;
+        }
+        .figma-note {
+            margin-top: 60px;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 16px;
+            font-size: 14px;
+            color: #888;
+            border: 1px dashed rgba(255, 255, 255, 0.2);
+        }
+        .figma-note strong { color: #FF0033; }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <h1>DG FLEX DESIGN</h1>
+    <p>High-fidelity wireframes optimized for Figma import. Use a "HTML to Design" plugin to bring these layouts directly into your project.</p>
+    
+    <div class="grid">
+        <a href="home.html" class="card">
+            <div class="icon"><i class="fa-solid fa-house"></i></div>
+            <h3>Home <i class="fa-solid fa-arrow-right" style="font-size: 16px; opacity: 0.5;"></i></h3>
+            <p>Main dashboard with hero section, active programs, and daily performance metrics.</p>
+        </a>
+        <a href="workout.html" class="card">
+            <div class="icon"><i class="fa-solid fa-dumbbell"></i></div>
+            <h3>Workout <i class="fa-solid fa-arrow-right" style="font-size: 16px; opacity: 0.5;"></i></h3>
+            <p>Interactive session screen with set tracking, timers, and exercise details.</p>
+        </a>
+        <a href="history.html" class="card">
+            <div class="icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+            <h3>History <i class="fa-solid fa-arrow-right" style="font-size: 16px; opacity: 0.5;"></i></h3>
+            <p>Detailed log of past sessions with volume summaries and exercise breakdown.</p>
+        </a>
+        <a href="statistics.html" class="card">
+            <div class="icon"><i class="fa-solid fa-chart-line"></i></div>
+            <h3>Statistics <i class="fa-solid fa-arrow-right" style="font-size: 16px; opacity: 0.5;"></i></h3>
+            <p>Visual progress charts, volume analysis, and muscle split distributions.</p>
+        </a>
+        <a href="profile.html" class="card">
+            <div class="icon"><i class="fa-solid fa-user"></i></div>
+            <h3>Profile <i class="fa-solid fa-arrow-right" style="font-size: 16px; opacity: 0.5;"></i></h3>
+            <p>User account management, settings, and subscription status.</p>
+        </a>
+    </div>
+
+    <div class="figma-note">
+        <i class="fa-brands fa-figma"></i> <strong>Figma Export Tip:</strong> Use the <strong>"html.to.design"</strong> or <strong>"Figma to HTML"</strong> plugin in Figma and paste the URLs of these local files to import them as editable layers.
+    </div>
+</body>
+</html>

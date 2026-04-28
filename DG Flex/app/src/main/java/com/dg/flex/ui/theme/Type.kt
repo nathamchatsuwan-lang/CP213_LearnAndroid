@@ -10,7 +10,6 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontVariation
 import androidx.compose.ui.text.font.FontWeight
 
-import com.dg.flex.shared.R as sharedR
 
 
 @OptIn(ExperimentalTextApi::class, ExperimentalMaterial3ExpressiveApi::class)
@@ -18,7 +17,7 @@ import com.dg.flex.shared.R as sharedR
 fun customTypography(): Typography {
     val fontFamily = FontFamily(
         Font(
-            sharedR.font.google_sans_flex,
+            com.dg.flex.R.font.google_sans_flex,
             weight = FontWeight.Bold,
             variationSettings = FontVariation.Settings(
                 FontVariation.Setting("ROND", 100f),
