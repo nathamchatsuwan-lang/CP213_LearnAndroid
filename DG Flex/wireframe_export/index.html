@@ -3,135 +3,171 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Wireframe Export - DG Flex</title>
+    <title>DG Flex - Design System & Wireframes</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap');
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #080808;
+            background-color: #000000;
             color: white;
             display: flex;
             flex-direction: column;
             align-items: center;
-            padding: 50px 20px;
+            padding: 80px 20px;
             margin: 0;
         }
+        .container {
+            max-width: 1200px;
+            width: 100%;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 80px;
+        }
         h1 { 
-            font-size: 48px;
+            font-size: 64px;
             font-weight: 800;
-            letter-spacing: -2px;
-            margin-bottom: 10px;
+            letter-spacing: -3px;
+            margin: 0;
             background: linear-gradient(to right, #FF0033, #FF6600);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
         }
-        p { color: #A0A0A0; margin-bottom: 50px; text-align: center; max-width: 600px; }
+        .subtitle { color: #888; font-size: 18px; margin-top: 10px; }
+        
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 24px;
-            width: 100%;
-            max-width: 1000px;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
         }
         .card {
-            background: #121212;
-            padding: 32px;
-            border-radius: 24px;
-            text-align: left;
-            border: 1px solid rgba(255, 255, 255, 0.1);
+            background: #111;
+            padding: 40px;
+            border-radius: 32px;
             text-decoration: none;
             color: white;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 220px;
         }
         .card:hover {
-            transform: translateY(-10px);
+            transform: translateY(-15px) scale(1.02);
             border-color: #FF0033;
-            box-shadow: 0 20px 40px rgba(255, 0, 51, 0.1);
-        }
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0; left: 0; right: 0; bottom: 0;
-            background: linear-gradient(45deg, transparent, rgba(255, 0, 51, 0.05));
-            opacity: 0;
-            transition: 0.3s;
-        }
-        .card:hover::before { opacity: 1; }
-        .card h3 { 
-            margin: 0 0 12px 0; 
-            font-size: 24px; 
-            font-weight: 800;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-        .card p { 
-            font-size: 14px; 
-            color: #A0A0A0; 
-            margin: 0; 
-            text-align: left;
+            box-shadow: 0 30px 60px rgba(255, 0, 51, 0.15);
+            background: #161616;
         }
         .icon {
-            width: 48px;
-            height: 48px;
+            width: 56px;
+            height: 56px;
             background: rgba(255, 0, 51, 0.1);
-            border-radius: 12px;
+            border-radius: 16px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 24px;
             color: #FF0033;
             font-size: 24px;
+            margin-bottom: 24px;
         }
-        .figma-note {
-            margin-top: 60px;
-            padding: 20px;
+        h3 { font-size: 24px; margin: 0 0 10px 0; font-weight: 700; }
+        p { color: #777; margin: 0; line-height: 1.5; font-size: 14px; }
+        
+        .badge {
+            align-self: flex-start;
             background: rgba(255, 255, 255, 0.05);
-            border-radius: 16px;
-            font-size: 14px;
-            color: #888;
-            border: 1px dashed rgba(255, 255, 255, 0.2);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 10px;
+            text-transform: uppercase;
+            font-weight: 800;
+            letter-spacing: 1px;
+            margin-top: 20px;
+            color: #555;
         }
-        .figma-note strong { color: #FF0033; }
+        .card:hover .badge { color: #FF0033; background: rgba(255, 0, 51, 0.1); }
+
+        .figma-banner {
+            margin-top: 100px;
+            background: #111;
+            padding: 30px;
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            border: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+        .figma-icon { font-size: 32px; color: #F24E1E; }
     </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 </head>
 <body>
-    <h1>DG FLEX DESIGN</h1>
-    <p>High-fidelity wireframes optimized for Figma import. Use a "HTML to Design" plugin to bring these layouts directly into your project.</p>
-    
-    <div class="grid">
-        <a href="home.html" class="card">
-            <div class="icon"><i class="fa-solid fa-house"></i></div>
-            <h3>Home <i class="fa-solid fa-arrow-right" style="font-size: 16px; opacity: 0.5;"></i></h3>
-            <p>Main dashboard with hero section, active programs, and daily performance metrics.</p>
-        </a>
-        <a href="workout.html" class="card">
-            <div class="icon"><i class="fa-solid fa-dumbbell"></i></div>
-            <h3>Workout <i class="fa-solid fa-arrow-right" style="font-size: 16px; opacity: 0.5;"></i></h3>
-            <p>Interactive session screen with set tracking, timers, and exercise details.</p>
-        </a>
-        <a href="history.html" class="card">
-            <div class="icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
-            <h3>History <i class="fa-solid fa-arrow-right" style="font-size: 16px; opacity: 0.5;"></i></h3>
-            <p>Detailed log of past sessions with volume summaries and exercise breakdown.</p>
-        </a>
-        <a href="statistics.html" class="card">
-            <div class="icon"><i class="fa-solid fa-chart-line"></i></div>
-            <h3>Statistics <i class="fa-solid fa-arrow-right" style="font-size: 16px; opacity: 0.5;"></i></h3>
-            <p>Visual progress charts, volume analysis, and muscle split distributions.</p>
-        </a>
-        <a href="profile.html" class="card">
-            <div class="icon"><i class="fa-solid fa-user"></i></div>
-            <h3>Profile <i class="fa-solid fa-arrow-right" style="font-size: 16px; opacity: 0.5;"></i></h3>
-            <p>User account management, settings, and subscription status.</p>
-        </a>
-    </div>
+    <div class="container">
+        <header>
+            <h1>DG FLEX V2</h1>
+            <p class="subtitle">Detailed High-Fidelity Wireframes & App Architecture</p>
+        </header>
 
-    <div class="figma-note">
-        <i class="fa-brands fa-figma"></i> <strong>Figma Export Tip:</strong> Use the <strong>"html.to.design"</strong> or <strong>"Figma to HTML"</strong> plugin in Figma and paste the URLs of these local files to import them as editable layers.
+        <div class="grid">
+            <a href="home.html" class="card">
+                <div>
+                    <div class="icon"><i class="fa-solid fa-house"></i></div>
+                    <h3>Dashboard</h3>
+                    <p>Coming next routine, resume session, AI plan reminders, and program list.</p>
+                </div>
+                <div class="badge">Main Hub</div>
+            </a>
+            <a href="workout.html" class="card">
+                <div>
+                    <div class="icon"><i class="fa-solid fa-dumbbell"></i></div>
+                    <h3>Active Session</h3>
+                    <p>Real-time set tracking, rest timers, tutorial media, and session progress.</p>
+                </div>
+                <div class="badge">Core UX</div>
+            </a>
+            <a href="history.html" class="card">
+                <div>
+                    <div class="icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+                    <h3>History</h3>
+                    <p>Calendar views, session logs, and detailed workout summaries.</p>
+                </div>
+                <div class="badge">Data</div>
+            </a>
+            <a href="calculators.html" class="card">
+                <div>
+                    <div class="icon"><i class="fa-solid fa-calculator"></i></div>
+                    <h3>Tools</h3>
+                    <p>1RM Estimation, TDEE/BMI metrics, and customized fitness calculators.</p>
+                </div>
+                <div class="badge">Utility</div>
+            </a>
+            <a href="statistics.html" class="card">
+                <div>
+                    <div class="icon"><i class="fa-solid fa-chart-line"></i></div>
+                    <h3>Statistics</h3>
+                    <p>Interactive charts for volume, frequency, and muscle group distribution.</p>
+                </div>
+                <div class="badge">Analytics</div>
+            </a>
+            <a href="profile.html" class="card">
+                <div>
+                    <div class="icon"><i class="fa-solid fa-user-gear"></i></div>
+                    <h3>Profile</h3>
+                    <p>User settings, subscription management, and personal configurations.</p>
+                </div>
+                <div class="badge">Account</div>
+            </a>
+        </div>
+
+        <div class="figma-banner">
+            <div class="figma-icon"><i class="fa-brands fa-figma"></i></div>
+            <div>
+                <h4 style="margin: 0; font-size: 18px;">Ready for Figma Import</h4>
+                <p style="margin: 5px 0 0 0;">These wireframes are pixel-perfect and optimized for the <strong>html.to.design</strong> plugin. Import them as editable layers to start prototyping.</p>
+            </div>
+        </div>
     </div>
 </body>
 </html>

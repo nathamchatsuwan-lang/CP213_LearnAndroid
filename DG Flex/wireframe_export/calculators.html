@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DG Flex - Calculators</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <div class="screen">
+        <div class="app-bar">
+            <h1>TOOLS & CALCULATORS</h1>
+            <i class="fa-solid fa-gear"></i>
+        </div>
+
+        <div class="content">
+            <div class="grid-2">
+                <div class="card" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 24px var(--spacing-md);">
+                    <div style="background: rgba(255,0,51,0.1); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 12px;">
+                        <i class="fa-solid fa-weight-hanging" style="color: var(--accent-color);"></i>
+                    </div>
+                    <h4 style="margin: 0; font-size: 14px;">1RM Calculator</h4>
+                    <p style="font-size: 10px; color: var(--text-secondary); margin-top: 4px;">Estimate your max strength</p>
+                </div>
+                <div class="card" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 24px var(--spacing-md);">
+                    <div style="background: rgba(208,188,255,0.1); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 12px;">
+                        <i class="fa-solid fa-person-running" style="color: var(--tertiary-color);"></i>
+                    </div>
+                    <h4 style="margin: 0; font-size: 14px;">BMI / TDEE</h4>
+                    <p style="font-size: 10px; color: var(--text-secondary); margin-top: 4px;">Metabolic & body metrics</p>
+                </div>
+                <div class="card" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 24px var(--spacing-md);">
+                    <div style="background: rgba(255,255,255,0.05); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 12px;">
+                        <i class="fa-solid fa-vial" style="color: white;"></i>
+                    </div>
+                    <h4 style="margin: 0; font-size: 14px;">Wilks Score</h4>
+                    <p style="font-size: 10px; color: var(--text-secondary); margin-top: 4px;">Compare relative strength</p>
+                </div>
+                <div class="card" style="display: flex; flex-direction: column; align-items: center; text-align: center; padding: 24px var(--spacing-md);">
+                    <div style="background: rgba(255,255,255,0.05); width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-bottom: 12px;">
+                        <i class="fa-solid fa-clock" style="color: white;"></i>
+                    </div>
+                    <h4 style="margin: 0; font-size: 14px;">Rest Timer</h4>
+                    <p style="font-size: 10px; color: var(--text-secondary); margin-top: 4px;">Custom interval presets</p>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: var(--spacing-lg);">
+                <h3 style="margin: 0 0 var(--spacing-md) 0; font-size: 18px;">1RM Estimator</h3>
+                <div class="row" style="gap: 12px; margin-bottom: var(--spacing-md);">
+                    <div style="flex: 1;">
+                        <label style="font-size: 10px; color: var(--text-secondary); display: block; margin-bottom: 4px;">Weight (kg)</label>
+                        <input type="number" value="100" style="width: 100%; background: var(--surface-light); border: 1px solid var(--glass-border); color: white; padding: 12px; border-radius: 8px;">
+                    </div>
+                    <div style="flex: 1;">
+                        <label style="font-size: 10px; color: var(--text-secondary); display: block; margin-bottom: 4px;">Reps</label>
+                        <input type="number" value="5" style="width: 100%; background: var(--surface-light); border: 1px solid var(--glass-border); color: white; padding: 12px; border-radius: 8px;">
+                    </div>
+                </div>
+                <div style="background: var(--surface-light); padding: 20px; border-radius: 12px; text-align: center;">
+                    <p style="margin: 0; font-size: 12px; color: var(--text-secondary);">Estimated One-Rep Max</p>
+                    <h2 style="margin: 8px 0 0 0; font-size: 36px; color: var(--accent-color);">116.7 <span style="font-size: 16px; color: white;">kg</span></h2>
+                </div>
+            </div>
+        </div>
+
+        <div class="bottom-bar">
+            <a href="home.html" class="bottom-bar-item">
+                <i class="fa-solid fa-house"></i>
+                <span>Home</span>
+            </a>
+            <a href="history.html" class="bottom-bar-item">
+                <i class="fa-solid fa-calendar-days"></i>
+                <span>History</span>
+            </a>
+            <a href="calculators.html" class="bottom-bar-item active">
+                <i class="fa-solid fa-calculator"></i>
+                <span>Tools</span>
+            </a>
+            <a href="statistics.html" class="bottom-bar-item">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Stats</span>
+            </a>
+            <a href="profile.html" class="bottom-bar-item">
+                <i class="fa-solid fa-user"></i>
+                <span>Profile</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
